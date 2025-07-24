@@ -1,0 +1,213 @@
+/* === Theme Colors === */
+body.dark {
+  background: #121212;
+  color: white;
+}
+body.light {
+  background: #ffffff;
+  color: #111;
+}
+
+/* === Default Theme === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  background: #121212;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background: inherit;
+  background-color: #121212;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle line in dark mode */
+  z-index: 1000;
+}
+
+body.light .navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.nav-links a {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  flex-direction: row;
+  padding: 4rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.gradient-header {
+  font-size: 4.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 0rem;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  font-weight: 900;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.bold-typewriter {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+}
+
+.role {
+  font-size: 4.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: rgb(174, 173, 173)
+}
+body.light .tagline {
+  color: rgb(59, 59, 59)
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+.primary {
+  padding: 0.6rem 1rem;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.secondary {
+  padding: 0.6rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: none;
+  border: 2px solid #8b5cf6;
+  border-radius: 6px;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgb(174, 173, 173);
+  margin-top: 2rem;
+}
+
+.floating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.15rem;
+  background: radial-gradient(circle at center, #000 10%, transparent 50%);
+  box-shadow: 0 0 10px rgba(63, 63, 63, 0.6);
+  animation: floatGlow 3s ease-in-out infinite;
+}
+
+.floating-img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0px);
+    box-shadow: 0 0 15px rgb(174, 173, 173);
+  }
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 0 0 30px rgb(174, 173, 173);
+  }
+}
+.about-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #d6d6d6;
+}
+
+body.light .about-section p {
+  color: rgb(59, 59, 59)
+}
