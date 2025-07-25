@@ -161,7 +161,7 @@ body.light .tagline {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: 0.15rem;
+  padding: 0.1rem;
   background: radial-gradient(circle at center, #000 10%, transparent 50%);
   box-shadow: 0 0 10px rgba(63, 63, 63, 0.6);
   animation: floatGlow 3s ease-in-out infinite;
@@ -186,28 +186,40 @@ body.light .tagline {
   }
 }
 .about-section {
+  display: flex;
+  justify-content: center;
   padding: 4rem 2rem;
+  background: transparent;
+}
+
+.about-card {
+  background: #ffffff;
+  color: #121212;
+  padding: 4rem 2rem;
+  border-radius: 12px;
   max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   text-align: left;
 }
 
-.about-section h2 {
-  font-size: 2rem;
+.about-card h2 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #8b5cf6);
+  background: linear-gradient(to right, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  font-weight: bold;
 }
 
-.about-section p {
+.about-card p {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
   color: #d6d6d6;
 }
 
-body.light .about-section p {
+body.light .about-card p {
   color: rgb(59, 59, 59)
 }

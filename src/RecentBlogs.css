@@ -1,0 +1,67 @@
+.recent-blogs {
+  padding: 3rem 1rem;
+  margin-bottom: 10rem;
+}
+
+.recent-title {
+  font-size: 2.5rem;
+  margin-top: 0rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-card {
+  background-color: var(--card-bg, #1a1a1a);
+  color: var(--text-color, white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.blog-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Swiper Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-color, white);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.5rem;
+}
+
+body.dark {
+  --card-bg: #1a1a1a;
+  --text-color: white;
+}
+
+body.light {
+  --card-bg: white;
+  --text-color: #111;
+}

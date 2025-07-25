@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-import profileImg from './assets/Aspiretoinspire.jpeg';
+import AboutMe from './AboutMe';
+import RecentProjects from './RecentProjects';
+import RecentBlogs from './RecentBlogs';
+import profileImg from './assets/img.jpeg';
 import { Sun, Moon } from 'lucide-react';
 
 function RoleRotator() {
@@ -88,20 +91,9 @@ function App() {
           <img src={profileImg} alt="Hiral" className="floating-img" />
         </div>
       </header>
-
-      <section className="about-section" id="about">
-        <h2>About Me</h2>
-        <p>
-          Affable, Organized, and Resourceful — these words best describe me. I’m a freshman studing Computer Science & Engineering student at UC Davis with a passion for building solutions that create meaningful impact. Whether it’s AI, full-stack development, or data analysis, I gravitate toward projects that challenge me and contribute to something bigger than myself.
-        </p>
-        <p>
-          I've led award-winning teams, built a resume-matching platform recognized at the GDSC Mid-Year Showcase, and interned in AI roles where I developed personalized recommendation systems and chatbot assistants using LangChain, Ollama, and pgvector. I thrive when I’m combining technical problem-solving with real-world application.
-        </p>
-        <p>
-          Outside the classroom, I’ve contributed to mental health platforms, built donation networks for NGOs, and worked on real-time systems like self-defense training tools. I’m always eager to learn, collaborate, and grow—especially in spaces where tech can drive positive change.
-        </p>
-      </section>
-
+      <AboutMe />
+      <RecentProjects />
+      <RecentBlogs />
     </div>
   );
 }
