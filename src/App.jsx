@@ -5,6 +5,7 @@ import RecentProjects from './RecentProjects';
 import RecentBlogs from './RecentBlogs';
 import profileImg from './assets/img.jpeg';
 import { Sun, Moon } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 function RoleRotator() {
   const roles = ['Hiral Arora', 'Software Engineer', 'Innovator', 'Researcher', 'Student'];
@@ -81,11 +82,42 @@ function App() {
           <p className="tagline">I do my most meaningful work when I connect with the vision, because that’s when passion comes naturally to me.</p>
           <p className="tagline">Looking for such opportunities in the field of Computer Science</p>
           <div className="buttons">
-            <button className="primary">Contact Me</button>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="secondary">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="downloadresume">
               Download Resume
             </a>
+
+            <a
+              href="mailto:hiral.arora.1418@gmail.com"
+              className="auth-button gmail"
+              title="Gmail"
+            >
+              <Mail size={20} />
+              <span>Gmail</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/hiral-arora-519046240/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="auth-button linkedin"
+              title="LinkedIn"
+            >
+              <Linkedin size={20} />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="https://github.com/hir-al-14"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="auth-button github"
+              title="GitHub"
+            >
+              <Github size={20} />
+              <span>GitHub</span>
+            </a>
           </div>
+
         </div>
         <div className="floating-container">
           <img src={profileImg} alt="Hiral" className="floating-img" />
