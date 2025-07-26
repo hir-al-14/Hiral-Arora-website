@@ -67,7 +67,7 @@ function App() {
         <div className="logo">Hiral Arora</div>
         <div className="nav-links">
           <a href="#projects">Projects</a>
-          <a href="https://medium.com/@yourusername" target="_blank" rel="noopener noreferrer">Blogs</a>
+          <a href="https://medium.com/@hiral-arora" target="_blank" rel="noopener noreferrer">Blogs</a>
           <a href="#contact">Contact</a>
           <button onClick={toggleTheme} className="theme-toggle">
             {theme === 'dark' ? <Sun size={30} /> : <Moon size={30} />}

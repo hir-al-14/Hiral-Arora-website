@@ -1,53 +1,76 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import './RecentProjects.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import dumpsterImg from './assets/images/Dumpster.png';
 
-const GITHUB_API = 'https://api.github.com/users/hir-al-14/repos?sort=updated';
+const projects = [
+  {
+    title: 'Portfolio Website',
+    image: dumpsterImg,
+    description: 'Personal website built using React and Tailwind.',
+    skills: ['React', 'Tailwind', 'JavaScript'],
+  },
+  {
+    title: 'Blog API',
+    image: '/images/blogapi.png',
+    description: 'REST API for a blog using Flask and MySQL.',
+    skills: ['Flask', 'Python', 'MySQL'],
+  },
+  {
+    title: 'Task Manager',
+    image: '/images/taskmanager.png',
+    description: 'Task tracking app with user auth.',
+    skills: ['Node.js', 'MongoDB', 'Express'],
+  },
+  {
+    title: 'Weather App',
+    image: '/images/weather.png',
+    description: 'Weather dashboard with OpenWeather API.',
+    skills: ['JavaScript', 'HTML', 'CSS'],
+  },
+  {
+    title: 'ChatBot',
+    image: '/images/chatbot.png',
+    description: 'AI-powered customer service bot.',
+    skills: ['Python', 'LangChain', 'React'],
+  },
+];
 
-function RecentProjects() {
-  const [repos, setRepos] = useState([]);
+function ProjectsSection() {
+  const sliderRef = useRef(null);
 
-  useEffect(() => {
-    fetch(GITHUB_API)
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          setRepos(data.slice(0, 10)); // Limit to 10 recent
-        }
+  const scroll = (direction) => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: direction === 'left' ? -350 : 350,
+        behavior: 'smooth',
       });
-  }, []);
-
-  if (!repos.length) return <div className="recent-projects">Loading projects...</div>;
+    }
+  };
 
   return (
-    <div className="recent-projects">
-      <h2 className="projects-title">Projects</h2>
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={2}
-        navigation
-        modules={[Navigation]}
-        breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {repos.map(repo => (
-          <SwiperSlide key={repo.id}>
-            <div className="project-card">
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                <h3>{repo.name}</h3>
-                <p>{repo.description ? repo.description.slice(0, 150) : "No description available"}...</p>
-              </a>
+    <section className="projects-section">
+      <h2 className="projects-title">PROJECTS</h2>
+      <div className="slider-controls">
+        <button className="arrow-btn" onClick={() => scroll('left')}>&lt;</button>
+        <div className="projects-slider" ref={sliderRef}>
+          {projects.map((project, index) => (
+            <div className="project-card" key={index}>
+              <img src={project.image} alt={project.title} className="project-img" />
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-desc">{project.description}</p>
+              <hr className="separator" />
+              <div className="skill-tags">
+                {project.skills.map((skill, idx) => (
+                  <span className="tag" key={idx}>{skill}</span>
+                ))}
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          ))}
+        </div>
+        <button className="arrow-btn" onClick={() => scroll('right')}>&gt;</button>
+      </div>
+    </section>
   );
 }
 
-export default RecentProjects;
+export default ProjectsSection;

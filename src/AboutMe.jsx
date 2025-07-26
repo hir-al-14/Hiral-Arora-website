@@ -1,20 +1,28 @@
+// AboutMe.jsx
 import React from 'react';
 import './AboutMe.css';
 
 function AboutMe() {
   return (
-    <section className="about-container">
-      <div className="about-card">
-        <h2 className="about-title">About Me</h2>
-        <p className="about-text">
-          I’m Hiral Arora, a freshman studing Computer Science & Engineering at UC Davis with a passion for building solutions that create meaningful impact. Whether it’s AI, full-stack development, or data analysis, I gravitate toward projects that challenge me and contribute to something bigger than myself.
-        </p>
-        <p className="about-text">
-          Affable, Organized, and Resourceful — these words best describe me. I've led award-winning teams, built a resume-matching platform recognized at the GDSC Mid-Year Showcase, and interned in AI roles where I developed personalized recommendation systems and chatbot assistants using LangChain, Ollama, and pgvector. I thrive when I’m combining technical problem-solving with real-world application.
-        </p>
-        <p className="about-text">
-            Outside the classroom, I’ve contributed to mental health platforms, built donation networks for NGOs, and worked on real-time systems like self-defense training tools. I’m always eager to learn, collaborate, and grow—especially in spaces where tech can drive positive change.
-        </p>
+    <section className="experience-section">
+      <div className="experience-grid">
+        <div className="experience-title">
+          <h2>BACKGROUND</h2>
+        </div>
+        <div className="experience-text">
+          <p>
+            <strong>Heyy!! I’m Hiral Arora — a sophomore at UC Davis, majoring in Computer Science with a Minor in Economics.</strong>
+          </p>
+          <p>
+            I have a <strong>deep passion for building solutions that create meaningful impact and connect with people on a personal and more relatable level.</strong> My work is grounded in developing systems with a strong <strong>user-centric mindset.</strong>
+          </p>
+          <p>
+            I’m especially drawn to the transformative power of <strong>Artificial Intelligence and Machine Learning fields</strong>,  where innovation meets real-world problems. I want to be part of building systems that not only perform but also understand, adapt, and elevate user experience.
+          </p>
+          <p>
+            <strong>For me, it’s never just about writing code — it’s about aligning with a vision I believe in, and giving it my full focus, energy, and heart.</strong>
+          </p>
+        </div>
       </div>
     </section>
   );
