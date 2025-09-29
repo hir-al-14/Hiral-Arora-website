@@ -85,10 +85,22 @@ function AboutMe() {
         </div>
         <div className="experience-text">
           <p>
-            Wrote a research paper titled “An exploratory Ukraine rising commodities price analysis: towards a resilient food system”, which
-was published in the conference proceedings <strong>named Advances in Computational Intelligence Systems, Springer.</strong> Presented the
-paper in the <strong>22nd United Kingdom Workshop on Computational Intelligence</strong> conference held at <strong>Aston University, UK</strong> and
-received the <strong>Young Researcher Award. (Sep 2023)</strong>
+            <ul>
+              <li>
+                <strong>Citation: </strong>Arora, H., Jayal, A., & Prakash, E. (2023, September). 
+                <em>An Exploratory Ukraine Rising Commodities Price Analysis: Towards a Resilient Food System</em>. 
+                In <strong>UK Workshop on Computational Intelligence</strong> (pp. 249-258). 
+                Cham: Springer Nature Switzerland.
+              </li>
+              <li>
+                Received the <strong>Young Researcher Award (Sep 2023)</strong>.
+              </li>
+              <li>
+                Presented the paper at the 
+                <strong>22nd United Kingdom Workshop on Computational Intelligence</strong>, 
+                Aston University, United Kingdom.
+              </li>
+            </ul>
           </p>
         </div>
         <div className="experience-title">
