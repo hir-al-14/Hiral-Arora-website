@@ -1,6 +1,6 @@
 .projects-section {
   background-color: #0f1115;
-  padding: 2rem 2rem;
+  padding: 0rem 0rem;
   text-align: center;
   color: #ffffff;
 }
@@ -8,6 +8,7 @@ body.light .projects-section {
   background-color: #ffffff;
   color: #222;
 }
+
 .projects-title {
   font-size: 1.5rem;
   color: #4f8df9;
@@ -17,6 +18,8 @@ body.light .projects-section {
 body.light .projects-title {
   color: #0077cc;
 }
+
+/* --- Slider --- */
 .slider-controls {
   display: flex;
   align-items: center;
@@ -24,19 +27,18 @@ body.light .projects-title {
   gap: 1rem;
 }
 .arrow-btn {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #0077cc;
-  background-color: transparent;
-  border: 2px solid #0077cc;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  background: transparent;     
+  border: none;                  
   cursor: pointer;
-  transition: background 0.2s ease;
+  padding: 0 0.3rem;
+  transition: color 0.2s ease;
 }
 .arrow-btn:hover {
-  background-color: #e0e0e0;
+  color: #4f8df9;
 }
+
 .projects-slider {
   display: flex;
   gap: 1.5rem;
@@ -46,6 +48,7 @@ body.light .projects-title {
   max-width: 1300px;
   scrollbar-width: none;
 }
+
 .project-card {
   flex: 0 0 calc(33.33% - 1rem);
   background: #1a1d23;
@@ -57,16 +60,14 @@ body.light .projects-title {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 body.light .project-card {
-  background-color: #ffffff;
+  background-color: #dce6fc;
   color: #333;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 body.light .project-card:hover {
   transform: translateY(-4px);
 }
+
 .project-img {
   width: 100%;
   height: 220px;
@@ -74,17 +75,7 @@ body.light .project-card:hover {
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
-.project-desc {
-  color: #a0a0a0;
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
-}
-body.light .project-desc {
-  color: #555;
-}
-body.light .project-desc {
-  color: #444;
-}
+
 .project-title {
   color: #ffffff;
   margin-bottom: 0.5rem;
@@ -92,6 +83,22 @@ body.light .project-desc {
 body.light .project-title {
   color: #0077cc;
 }
+
+.project-desc {
+  text-align: left;
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.2rem;   
+}
+.project-desc li {
+  margin-bottom: 0.4rem;
+  list-style: disc;
+}
+body.light .project-desc {
+  color: #444;
+}
+
 .separator {
   border: none;
   height: 1px;
@@ -101,6 +108,7 @@ body.light .project-title {
 body.light .separator {
   background-color: #ddd;
 }
+
 .skill-tags {
   display: flex;
   flex-wrap: wrap;

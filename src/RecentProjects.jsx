@@ -1,38 +1,57 @@
 import React, { useRef } from 'react';
 import './RecentProjects.css';
-import dumpsterImg from './assets/images/Dumpster.png';
+import portfolioImg from './assets/images/portfolio.png';
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    image: dumpsterImg,
-    description: 'Personal website built using React and Tailwind.',
-    skills: ['React', 'Tailwind', 'JavaScript'],
-  },
-  {
-    title: 'Blog API',
+    title: 'Self-Defense Learning System (In Progress)',
     image: '/images/blogapi.png',
-    description: 'REST API for a blog using Flask and MySQL.',
-    skills: ['Flask', 'Python', 'MySQL'],
+    description: [
+      'Real-time training tool using MediaPipe pose detection and OpenCV.',
+      'Pose matching with live feedback and correction guidance.',
+      'Full-stack system with FastAPI, WebSockets, TensorFlow, React, PostgreSQL, Docker.',
+    ],
+    skills: ['Python', 'MediaPipe', 'OpenCV', 'FastAPI', 'React.js', 'PostgreSQL', 'Docker'],
   },
   {
-    title: 'Task Manager',
+    title: 'Skill Scalar @ Google Developer Student Club UC Davis',
     image: '/images/taskmanager.png',
-    description: 'Task tracking app with user auth.',
-    skills: ['Node.js', 'MongoDB', 'Express'],
+    description: [
+      'Led a team of five as Project Manager and won Best Technical Project at the Project Showcase.',
+      'Built a web app that matches resumes with job listings scraped from platforms like Linkedin, Indeed, Google, etc. using BeautifulSoup.',
+      'Provided course recommendations to bridge skill gaps via resume analysis, using OpenRouter AI prompts and a LangChain chatbot.',
+      'Linked frontend and backend using FastAPI, and implemented pose detection with MediaPipe (ongoing) to suggest interview attire.'
+    ],
+    skills: ['FastAPI', 'React.js', 'BeautifulSoup', 'LangChain', 'MediaPipe', 'PostgreSQL'],
   },
   {
-    title: 'Weather App',
+    title: 'Diabetes Risk Prediction @ AI Student Collective UC Davis',
     image: '/images/weather.png',
-    description: 'Weather dashboard with OpenWeather API.',
-    skills: ['JavaScript', 'HTML', 'CSS'],
+    description: [
+      'Developed a machine learning model to predict health risk based on key health indicators like blood pressure, insulin levels, and BMI.',
+      'Trained and evaluated models using Random Forest, Logistic Regression, and SVM for accurate risk classification.'
+    ],
+    skills: ['Python', 'Scikit-Learn', 'React.js', 'Random Forest', 'Logistic Regression', 'SVM'],
   },
   {
-    title: 'ChatBot',
+    title: 'DO-GOODING',
     image: '/images/chatbot.png',
-    description: 'AI-powered customer service bot.',
-    skills: ['Python', 'LangChain', 'React'],
+    description: [
+      'Developed a ReactJS web application that facilitates item-based donations by linking 200+ donors with recipients from 4 NGOs.',
+      'Incorporated location-based matching to enable effective distribution of consumables, stationary, and clothing.',
+      'Used MongoDB and an integrated Google Maps API for proximity filtering, real-time updates and scalable performance were guaranteed.'
+    ],
+    skills: ['Python', 'Tailwind', 'React', 'JavaScript'],
   },
+  {
+    title: 'Portfolio Website',
+    image: portfolioImg,
+    description: [
+      'Personal website built using React and Tailwind.',
+      'Responsive design with smooth scrolling.',
+    ],
+    skills: ['React', 'Tailwind', 'JavaScript'],
+  }
 ];
 
 function ProjectsSection() {
@@ -49,15 +68,20 @@ function ProjectsSection() {
 
   return (
     <section className="projects-section">
-      <h2 className="projects-title">PROJECTS</h2>
       <div className="slider-controls">
         <button className="arrow-btn" onClick={() => scroll('left')}>&lt;</button>
         <div className="projects-slider" ref={sliderRef}>
           {projects.map((project, index) => (
             <div className="project-card" key={index}>
-              <img src={project.image} alt={project.title} className="project-img" />
+              {/* <img src={project.image} alt={project.title} className="project-img" /> */}
               <h3 className="project-title">{project.title}</h3>
-              <p className="project-desc">{project.description}</p>
+
+              <ul className="project-desc">
+                {project.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
               <hr className="separator" />
               <div className="skill-tags">
                 {project.skills.map((skill, idx) => (

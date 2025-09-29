@@ -1,14 +1,9 @@
 .experience-section {
   background-color: #0f1115;
   color: #a0a0a0;
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   justify-content: center;
-}
-
-body.light .experience-section {
-  background-color: #ffffff;
-  color: #000000;
 }
 
 .experience-grid {
@@ -29,35 +24,95 @@ body.light .experience-section {
 
 .experience-text {
   font-size: 1.02rem;
-  line-height: 1.5;
+  line-height: 2.2;
   display: flex;
   flex-direction: column;
-  gap: 0rem;
-  color: #a0a0a0;
+  gap: 0.5rem;
+  color: #b2b1b1;
 }
-
-body.light .experience-text {
-  color:#1e1e1e
-}
-
 .experience-text strong {
   font-weight: 600;
-  color: #ffffff;              /* slightly lighter than body text */
+  color: #ffffff;
 }
-body.light .experience-text strong {
-  color:#000000
+
+.timeline {
+  position: relative;
+  padding-left: 60px; 
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;  
+  width: 2px;
+  height: 100%;
+  background-color: #4f8df9; 
+}
+
+
+.timeline-dot {
+  position: absolute;
+  left: 4px;  
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border: 2.2px solid #4f8df9;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-card {
+  background-color: #f6f7f8; 
+  padding: 1rem;
+  border-radius: 8px;
+  width: 700px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  color: #1e1e1e;
+  margin-left: 40px; 
+}
+
+.timeline-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 0 0 0.3rem;
+  color: #4f8df9;
+}
+
+.timeline-role {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #000000;
+}
+
+.timeline-points {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #333333;
+}
+.timeline-points strong {
+  font-weight: 600;
+  color: #000000;
 }
 
 @media (max-width: 768px) {
   .experience-grid {
     grid-template-columns: 1fr;
   }
-
-  .experience-title {
-    margin-bottom: 1rem;
+  .timeline {
+    padding-left: 35px;
   }
-
-  .experience-title h2 {
-    text-align: left;
+  .timeline-card {
+    max-width: 100%;
+    margin-left: 15px;
   }
 }

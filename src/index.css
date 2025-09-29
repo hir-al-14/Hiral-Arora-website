@@ -1,4 +1,3 @@
-/* === Theme Colors === */
 body.dark {
   background: #121212;
   color: white;
@@ -8,7 +7,6 @@ body.light {
   color: #111;
 }
 
-/* === Default Theme === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -21,12 +19,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   position: sticky;
   top: 0;
   background: inherit;
   background-color: #121212;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle line in dark mode */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   z-index: 1000;
 }
 
@@ -36,15 +34,15 @@ body.light .navbar {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-weight: normal;
+  font-size: 2.2rem;
 }
 
 .nav-links a {
   margin-right: 2rem;
   text-decoration: none;
   color: inherit;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -66,7 +64,6 @@ body.light .navbar {
   align-items: center;
 }
 
-/* === Hero Section === */
 .hero {
   display: flex;
   flex-direction: row;
@@ -81,9 +78,9 @@ body.light .navbar {
 }
 
 .gradient-header {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  background: linear-gradient(to right, #073d94, #3b82f6, #b7cef3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -94,7 +91,7 @@ body.light .navbar {
 .cursor {
   display: inline-block;
   animation: blink 1s step-end infinite;
-  font-weight: 900;
+  font-weight: 600;
   margin-left: 2px;
 }
 
@@ -103,21 +100,22 @@ body.light .navbar {
 }
 
 .bold-typewriter {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Allura', 'Shadows Into Light', 'Indie Flower', 'Mr Dafoe', cursive;
   font-weight: 700;
 }
 
 .role {
-  font-size: 4.5rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 1px;
 }
 .tagline {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: rgb(174, 173, 173)
+  font-family: 'Allura', 'Shadows Into Light', 'Indie Flower', 'Mr Dafoe', cursive;
 }
 body.light .tagline {
   color: rgb(59, 59, 59)
@@ -128,7 +126,7 @@ body.light .tagline {
 }
 .downloadresume {
   padding: 0.6rem 1rem;
-  background: linear-gradient(to right, #8b5cf6, #c43d80);
+  background: linear-gradient(to right, #073d94, #3b82f6, #b7cef3);
   color: white;
   border: none;
   border-radius: 6px;
@@ -136,6 +134,11 @@ body.light .tagline {
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.resume {
+  padding-bottom: 2rem;
+  font-size: 1rem;
 }
 
 .auth-button {

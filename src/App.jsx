@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import AboutMe from './AboutMe';
 import RecentProjects from './RecentProjects';
-import RecentBlogs from './RecentBlogs';
 import profileImg from './assets/img.jpeg';
 import { Sun, Moon } from 'lucide-react';
 import { Mail, Github, Linkedin } from 'lucide-react';
@@ -22,7 +21,7 @@ function RoleRotator() {
     let timeout = 100;
 
     if (isEnd) {
-      timeout = 1200; // pause before deleting
+      timeout = 1200; 
     } else if (isStart) {
       timeout = 300;
     }
@@ -77,22 +76,24 @@ function App() {
 
       <header className="hero">
         <div className="hero-text">
-          <h1 className="gradient-header">Hello, I’m</h1>
+          <h1 className="gradient-header">Heyy! I’m</h1>
           <RoleRotator />
           <p className="tagline">I do my most meaningful work when I connect with the vision, because that’s when passion comes naturally to me.</p>
           <p className="tagline">Looking for such opportunities in the field of Computer Science</p>
-          <div className="buttons">
+          <br />
+          <h3>You can look at my resume here !!</h3>
+          <div className="resume">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="downloadresume">
-              Download Resume
+              My Resume
             </a>
-
+          </div>
+          <div className="buttons">
             <a
               href="mailto:hiral.arora.1418@gmail.com"
               className="auth-button gmail"
               title="Gmail"
             >
               <Mail size={20} />
-              <span>Gmail</span>
             </a>
 
             <a
@@ -103,7 +104,6 @@ function App() {
               title="LinkedIn"
             >
               <Linkedin size={20} />
-              <span>LinkedIn</span>
             </a>
 
             <a
@@ -114,7 +114,6 @@ function App() {
               title="GitHub"
             >
               <Github size={20} />
-              <span>GitHub</span>
             </a>
           </div>
 
@@ -125,7 +124,6 @@ function App() {
       </header>
       <AboutMe />
       <RecentProjects />
-      <RecentBlogs />
     </div>
   );
 }
