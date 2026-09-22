@@ -173,3 +173,40 @@ body {
     font-size: 11px;
   }
 }
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 1rem 0;
+
+    flex-wrap: wrap;
+    row-gap: 0.9rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+
+    justify-content: space-between;
+
+    order: 2;
+  }
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  background: var(--bg);
+  color: var(--text);
+}
