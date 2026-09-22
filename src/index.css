@@ -1,0 +1,46 @@
+/* COLORS */
+
+:root {
+  font-family: Arial, sans-serif;
+
+  --bg: #f4f7f9;
+  --surface: #ffffff;
+
+  --text: #17212a;
+  --text-secondary: #596873;
+
+  --border: #d8e0e5;
+
+  --blue: #557f9f;
+  --blue-bright: #365f80;
+}
+
+
+/* BASE STYLES */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* PAGE LAYOUT */
+
+.site {
+  min-height: 100vh;
+}
+
+.page-content {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
