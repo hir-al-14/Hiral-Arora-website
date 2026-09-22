@@ -117,7 +117,6 @@ body {
   content: "";
 
   position: absolute;
-
   left: 50%;
   bottom: -8px;
 
@@ -125,7 +124,6 @@ body {
   height: 4px;
 
   border-radius: 50%;
-
   background: var(--blue-bright);
 
   opacity: 0;
@@ -139,5 +137,6 @@ body {
 
 .navbar-links a:hover::after {
   opacity: 1;
+
   transform: translateX(-50%) translateY(0);
 }

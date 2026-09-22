@@ -2,7 +2,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <a className="navbar-logo" href="/">
-        hiral arora <span>♡</span>
+        Hiral Arora <span>♡</span>
       </a>
 
       <nav className="navbar-links">
