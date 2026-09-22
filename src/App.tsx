@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Rain from "./components/Rain";
 import Hero from "./components/Hero";
+import Experience from "./components/Experience";
 
 function App() {
   const [rainEnabled, setRainEnabled] =
@@ -20,6 +21,7 @@ function App() {
 
         <main>
           <Hero />
+          <Experience />
         </main>
       </div>
     </div>
