@@ -1,13 +1,20 @@
+import { useState } from "react";
+
 import Navbar from "./components/Navbar";
 import Rain from "./components/Rain";
 
 function App() {
+  const [rainEnabled, setRainEnabled] = useState(true);
+
   return (
     <div className="site">
-      <Rain />
+      {rainEnabled && <Rain />}
 
       <div className="page-content">
-        <Navbar />
+        <Navbar
+          rainEnabled={rainEnabled}
+          setRainEnabled={setRainEnabled}
+        />
       </div>
     </div>
   );
