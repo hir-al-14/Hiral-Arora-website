@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react";
 
+type Theme = "light" | "dark";
+
+function getInitialTheme(): Theme {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return "dark";
+}
+
 function ThemeToggle() {
-  const [theme, setTheme] =
-    useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      theme
-    );
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   function toggleTheme() {
-    setTheme(
-      theme === "dark"
-        ? "light"
-        : "dark"
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark"
     );
   }
 
@@ -23,7 +30,9 @@ function ThemeToggle() {
     <button
       className="theme-toggle"
       onClick={toggleTheme}
-      aria-label="Toggle color theme"
+      aria-label={`Switch to ${
+        theme === "dark" ? "light" : "dark"
+      } mode`}
     >
       {theme === "dark" ? "☾" : "☀"}
     </button>
