@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Rain from "./components/Rain";
+import Hero from "./components/Hero";
 
 function App() {
   const [rainEnabled, setRainEnabled] = useState(true);
@@ -15,6 +16,7 @@ function App() {
           rainEnabled={rainEnabled}
           setRainEnabled={setRainEnabled}
         />
+        <Hero />
       </div>
     </div>
   );
