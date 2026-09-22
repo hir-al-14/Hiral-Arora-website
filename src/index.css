@@ -59,22 +59,29 @@ body {
 /* PAGE LAYOUT */
 
 .site {
+  position: relative;
+
+  width: 100%;
   min-height: 100vh;
+
+  overflow-x: hidden;
 }
 
 .page-content {
-  width: min(1180px, calc(100% - 64px));
-  margin: 0 auto;
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
 }
 
 /* NAVBAR */
 
 .navbar {
-  height: 84px;
+  min-height: 84px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 2rem;
 
   border-bottom: 1px solid var(--border);
 }
@@ -95,7 +102,9 @@ body {
 
 .navbar-links {
   display: flex;
-  gap: 32px;
+  align-items: center;
+
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 .navbar-links a {
@@ -139,4 +148,28 @@ body {
   opacity: 1;
 
   transform: translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .page-content {
+    width: min(100% - 1.5rem, 1180px);
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .navbar-logo {
+    font-size: 12px;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-links a {
+    font-size: 11px;
+  }
 }
