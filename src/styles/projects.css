@@ -1,0 +1,145 @@
+.project-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.project {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: clamp(1.5rem, 3vw, 2rem);
+
+  border: 1px solid var(--border);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--surface) 72%,
+      transparent
+    );
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--blue);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--blue) 6%,
+      var(--surface)
+    );
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.project-number {
+  color: var(--pink);
+}
+
+.project-type {
+  text-align: right;
+}
+
+.project h3 {
+  margin: auto 0 0;
+
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 650;
+
+  letter-spacing: -0.04em;
+}
+
+.project-description {
+  margin: 1rem 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+
+  margin-top: 1.5rem;
+}
+
+.project-stack span {
+  color: var(--blue);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-arrow {
+  position: absolute;
+
+  top: 1.5rem;
+  right: 1.5rem;
+
+  color: var(--blue);
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transform: translate(-4px, 4px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project:hover .project-arrow {
+  opacity: 1;
+
+  transform: translate(0, 0);
+}
+
+@media (max-width: 900px) {
+  .project-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    min-height: 330px;
+  }
+}

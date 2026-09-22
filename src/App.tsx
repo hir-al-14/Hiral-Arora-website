@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Rain from "./components/Rain";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
   const [rainEnabled, setRainEnabled] =
@@ -22,6 +23,7 @@ function App() {
         <main>
           <Hero />
           <Experience />
+          <Projects />
         </main>
       </div>
     </div>
