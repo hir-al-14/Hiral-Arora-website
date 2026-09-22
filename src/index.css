@@ -15,6 +15,20 @@
   --blue-bright: #365f80;
 }
 
+/* DARK THEME */
+
+[data-theme="dark"] {
+  --bg: #101820;
+  --surface: #16212b;
+
+  --text: #edf3f7;
+  --text-secondary: #a6b4bf;
+
+  --border: #283846;
+
+  --blue: #78a9d1;
+  --blue-bright: #9cc7e8;
+}
 
 /* BASE STYLES */
 
