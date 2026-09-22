@@ -224,11 +224,12 @@ body {
     line-height: 1.6;
   }
 }
-@media (max-width: 520px) {
+
+@media (max-width: 600px) {
   .navbar {
     grid-template-columns: 1fr auto;
 
-    padding: 1rem 0;
+    padding-block: 1rem;
     row-gap: 1rem;
   }
 
@@ -237,9 +238,28 @@ body {
 
     width: 100%;
 
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    order: 3;
+    gap: 1.5rem;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-links a {
+    flex-shrink: 0;
+
+    font-size: 13px;
+  }
+
+  .navbar-controls {
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 
