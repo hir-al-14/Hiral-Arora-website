@@ -389,7 +389,13 @@ body {
 
   border-radius: 50%;
 
-  background: var(--blue-bright);
+  background: var(--pink);
+
+  box-shadow: 0 0 14px color-mix(
+    in srgb,
+    var(--pink) 45%,
+    transparent
+  );
 }
 
 .hero h1 {
@@ -403,9 +409,22 @@ body {
 }
 
 .hero h1 em {
+  display: inline-block;
+
   color: var(--blue-bright);
 
   font-style: normal;
+
+  background: linear-gradient(
+    90deg,
+    var(--blue-bright),
+    var(--lavender)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
