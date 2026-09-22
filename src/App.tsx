@@ -1,13 +1,11 @@
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Rain from "./components/Rain";
 
 function App() {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }, []);
-
   return (
     <div className="site">
+      <Rain />
+
       <div className="page-content">
         <Navbar />
       </div>

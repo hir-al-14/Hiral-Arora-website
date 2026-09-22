@@ -17,6 +17,8 @@
   --sky: #a9c9e8;
   --lavender: #aaa7d8;
   --pink: #d8a6bd;
+
+  --rain: rgba(91, 143, 196, 0.15);
 }
 
 /* DARK THEME */
@@ -36,6 +38,8 @@
   --sky: #77b5e8;
   --lavender: #aaa7e8;
   --pink: #dfa6c1;
+
+  --rain: rgba(155, 200, 242, 0.16);
 }
 
 /* BASE STYLES */
@@ -241,4 +245,51 @@ body {
 
   background: var(--bg);
   color: var(--text);
+}
+
+/* RAIN */
+
+.rain {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rain-drop {
+  position: absolute;
+
+  top: -80px;
+
+  width: 1px;
+  height: clamp(40px, 6vw, 65px);
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--rain)
+  );
+
+  animation-name: rainfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainfall {
+  from {
+    transform: translateY(-20vh) translateX(0) rotate(8deg);
+  }
+
+  to {
+    transform: translateY(130vh) translateX(-70px) rotate(8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain-drop {
+    display: none;
+  }
 }
