@@ -5,7 +5,8 @@ import Rain from "./components/Rain";
 import Hero from "./components/Hero";
 
 function App() {
-  const [rainEnabled, setRainEnabled] = useState(true);
+  const [rainEnabled, setRainEnabled] =
+    useState(true);
 
   return (
     <div className="site">
@@ -16,7 +17,10 @@ function App() {
           rainEnabled={rainEnabled}
           setRainEnabled={setRainEnabled}
         />
-        <Hero />
+
+        <main>
+          <Hero />
+        </main>
       </div>
     </div>
   );

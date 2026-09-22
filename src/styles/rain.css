@@ -1,0 +1,57 @@
+.rain {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.rain-drop {
+  position: absolute;
+
+  top: -80px;
+
+  width: 1px;
+  height: clamp(40px, 6vw, 65px);
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--rain)
+  );
+
+  animation-name: rainfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+/* RAIN ANIMATION */
+
+@keyframes rainfall {
+  from {
+    transform:
+      translateY(-20vh)
+      translateX(0)
+      rotate(8deg);
+  }
+
+  to {
+    transform:
+      translateY(130vh)
+      translateX(-70px)
+      rotate(8deg);
+  }
+}
+
+
+/* Respect accessibility settings */
+
+@media (prefers-reduced-motion: reduce) {
+  .rain-drop {
+    display: none;
+  }
+}

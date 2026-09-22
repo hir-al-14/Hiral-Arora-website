@@ -1,0 +1,157 @@
+.hero {
+  min-height: calc(100svh - 84px);
+
+  display: flex;
+  align-items: center;
+
+  padding-block: clamp(4rem, 10vh, 8rem);
+}
+
+.hero-content {
+  width: min(100%, 900px);
+}
+
+
+/* HERO STATUS */
+
+.hero-status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin:
+    0
+    0
+    clamp(1.75rem, 4vw, 2.5rem);
+
+  color: var(--text-secondary);
+
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+}
+
+.hero-status span {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  box-shadow:
+    0 0 14px
+    color-mix(
+      in srgb,
+      var(--pink) 45%,
+      transparent
+    );
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 em {
+  display: inline-block;
+
+  color: var(--blue-bright);
+
+  font-style: normal;
+
+  background: linear-gradient(
+    90deg,
+    var(--blue-bright),
+    var(--lavender)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-description {
+  width: min(100%, 620px);
+
+  margin:
+    clamp(2rem, 4vw, 2.75rem)
+    0
+    0;
+
+  color: var(--text-secondary);
+
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+
+  line-height: 1.7;
+}
+
+
+/* HERO LINKS */
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem 1.75rem;
+
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.hero-links a {
+  color: var(--text);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-links a:hover {
+  color: var(--blue-bright);
+
+  transform: translateY(-2px);
+}
+
+
+/* MOBILE HERO */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+
+    padding-block:
+      clamp(4.5rem, 15vw, 7rem);
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(2.75rem, 12vw, 4.5rem);
+
+    line-height: 1;
+  }
+
+  .hero-description {
+    line-height: 1.6;
+  }
+}
