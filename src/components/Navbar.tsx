@@ -1,3 +1,5 @@
+import ThemeToggle from "./ThemeToggle";
+
 function Navbar() {
   return (
     <header className="navbar">
@@ -6,11 +8,13 @@ function Navbar() {
       </a>
 
       <nav className="navbar-links">
-        <a href="#experience">experience</a>
-        <a href="#projects">projects</a>
-        <a href="#hardware">hardware</a>
-        <a href="#about">about me</a>
+        <a href="experience">experience</a>
+        <a href="projects">projects</a>
+        <a href="hardware">hardware</a>
+        <a href="about">about me</a>
       </nav>
+
+      <ThemeToggle />
     </header>
   );
 }
