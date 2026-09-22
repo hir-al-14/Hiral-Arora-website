@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Hardware from "./components/Hardware";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 function App() {
   const [rainEnabled, setRainEnabled] =
@@ -29,6 +30,7 @@ function App() {
           <Hardware />
           <About />
         </main>
+        <Footer />
       </div>
     </div>
   );
