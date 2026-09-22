@@ -58,3 +58,42 @@ body {
   width: min(1180px, calc(100% - 64px));
   margin: 0 auto;
 }
+
+/* NAVBAR */
+
+.navbar {
+  height: 84px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-logo {
+  color: var(--text);
+
+  font-size: 13px;
+  letter-spacing: 0.08em;
+
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--blue-bright);
+}

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
   useEffect(() => {
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="site">
       <div className="page-content">
-        <p>Hiral Arora</p>
+        <Navbar />
       </div>
     </div>
   );
