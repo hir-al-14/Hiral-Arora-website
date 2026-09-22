@@ -39,8 +39,26 @@ function Hero() {
           </a>
 
           <a href="#projects">
-            see my work ↓
+            projects ↓
           </a>
+        </div>
+      </div>
+
+      <div className="hero-visual">
+        <div className="photo-frame">
+          <div className="photo-placeholder">
+            photo incoming :)
+          </div>
+
+          <span className="photo-corner corner-tl" />
+          <span className="photo-corner corner-tr" />
+          <span className="photo-corner corner-bl" />
+          <span className="photo-corner corner-br" />
+
+          <div className="photo-meta">
+            <span>HIRAL_01.JPG</span>
+            <span>DAVIS, CA</span>
+          </div>
         </div>
       </div>
     </section>

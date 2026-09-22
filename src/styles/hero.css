@@ -1,18 +1,24 @@
 .hero {
   min-height: calc(100svh - 84px);
 
-  display: flex;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(240px, 0.65fr);
+
   align-items: center;
+
+  gap: clamp(3rem, 7vw, 7rem);
 
   padding-block: clamp(4rem, 10vh, 8rem);
 }
 
 .hero-content {
-  width: min(100%, 900px);
+  min-width: 0;
 }
 
 
-/* HERO STATUS */
+/* STATUS */
 
 .hero-status {
   display: flex;
@@ -20,10 +26,7 @@
 
   gap: 10px;
 
-  margin:
-    0
-    0
-    clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
 
   color: var(--text-secondary);
 
@@ -45,30 +48,24 @@
 
   box-shadow:
     0 0 14px
-    color-mix(
-      in srgb,
-      var(--pink) 45%,
-      transparent
-    );
+    color-mix(in srgb, var(--pink) 45%, transparent);
 }
 
 
-/* HERO TITLE */
+/* TITLE */
 
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 500;
+  font-size: clamp(2.8rem, 5.2vw, 5.5rem);
+  font-weight: 550;
 
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 .hero h1 em {
   display: inline-block;
-
-  color: var(--blue-bright);
 
   font-style: normal;
 
@@ -80,30 +77,25 @@
 
   background-clip: text;
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
 }
 
 
-/* HERO DESCRIPTION */
+/* DESCRIPTION */
 
 .hero-description {
   width: min(100%, 620px);
 
-  margin:
-    clamp(2rem, 4vw, 2.75rem)
-    0
-    0;
+  margin: clamp(2rem, 4vw, 2.75rem) 0 0;
 
   color: var(--text-secondary);
 
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-
   line-height: 1.7;
 }
 
 
-/* HERO LINKS */
+/* LINKS */
 
 .hero-links {
   display: flex;
@@ -118,7 +110,7 @@
   color: var(--text);
 
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 
   text-decoration: none;
 
@@ -134,24 +126,141 @@
 }
 
 
-/* MOBILE HERO */
+/* PHOTO */
 
-@media (max-width: 700px) {
+.hero-visual {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.photo-frame {
+  position: relative;
+
+  width: min(100%, 360px);
+
+  padding: 10px;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--blue) 10%, transparent),
+      color-mix(in srgb, var(--lavender) 10%, transparent)
+    );
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.photo-meta {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-top: 10px;
+
+  color: var(--text-secondary);
+
+  font-family: monospace;
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* Registration marks */
+
+.photo-corner {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 0;
+  left: 0;
+
+  border-top: 1px solid var(--blue);
+  border-left: 1px solid var(--blue);
+}
+
+.corner-tr {
+  top: 0;
+  right: 0;
+
+  border-top: 1px solid var(--blue);
+  border-right: 1px solid var(--blue);
+}
+
+.corner-bl {
+  bottom: 26px;
+  left: 0;
+
+  border-bottom: 1px solid var(--blue);
+  border-left: 1px solid var(--blue);
+}
+
+.corner-br {
+  right: 0;
+  bottom: 26px;
+
+  border-right: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
   .hero {
+    grid-template-columns: 1fr;
+
     min-height: auto;
 
-    padding-block:
-      clamp(4.5rem, 15vw, 7rem);
+    gap: 3.5rem;
+
+    padding-block: clamp(4.5rem, 12vw, 7rem);
+  }
+
+  .hero-content {
+    width: min(100%, 720px);
   }
 
   .hero h1 {
-    font-size:
-      clamp(2.75rem, 12vw, 4.5rem);
-
-    line-height: 1;
+    font-size: clamp(2.8rem, 10vw, 5rem);
   }
 
-  .hero-description {
-    line-height: 1.6;
+  .hero-visual {
+    justify-content: flex-start;
+  }
+
+  .photo-frame {
+    width: min(75vw, 360px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 11.5vw, 3.6rem);
+  }
+
+  .photo-frame {
+    width: min(88vw, 340px);
   }
 }
