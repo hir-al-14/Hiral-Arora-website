@@ -3,31 +3,39 @@
 :root {
   font-family: Arial, sans-serif;
 
-  --bg: #f4f7f9;
+  --bg: #f7f9fc;
   --surface: #ffffff;
 
-  --text: #17212a;
-  --text-secondary: #596873;
+  --text: #18212b;
+  --text-secondary: #66717d;
 
-  --border: #d8e0e5;
+  --border: #dce3ea;
 
-  --blue: #557f9f;
-  --blue-bright: #365f80;
+  --blue: #5b8fc4;
+  --blue-bright: #3978b7;
+
+  --sky: #a9c9e8;
+  --lavender: #aaa7d8;
+  --pink: #d8a6bd;
 }
 
 /* DARK THEME */
 
 [data-theme="dark"] {
-  --bg: #101820;
-  --surface: #16212b;
+  --bg: #111b27;
+  --surface: #182536;
 
-  --text: #edf3f7;
-  --text-secondary: #a6b4bf;
+  --text: #f2f6fa;
+  --text-secondary: #aab8c6;
 
-  --border: #283846;
+  --border: #2b3d50;
 
-  --blue: #78a9d1;
-  --blue-bright: #9cc7e8;
+  --blue: #79aee3;
+  --blue-bright: #9bc8f2;
+
+  --sky: #77b5e8;
+  --lavender: #aaa7e8;
+  --pink: #dfa6c1;
 }
 
 /* BASE STYLES */
