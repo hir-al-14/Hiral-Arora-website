@@ -2,14 +2,14 @@ function Navbar() {
   return (
     <header className="navbar">
       <a className="navbar-logo" href="/">
-        HIRAL ARORA
+        hiral arora <span>♡</span>
       </a>
 
       <nav className="navbar-links">
-        <a href="#work">/ work</a>
-        <a href="#experience">/ experience</a>
-        <a href="#lab">/ lab</a>
-        <a href="#about">/ about</a>
+        <a href="#experience">experience</a>
+        <a href="#projects">projects</a>
+        <a href="#hardware">hardware</a>
+        <a href="#about">about me</a>
       </nav>
     </header>
   );
