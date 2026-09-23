@@ -1,8 +1,8 @@
 const organizations = [
-  { name: "CodeLab", role: "VP of Projects", logo: "codelab.svg", url: "https://codelabdavis.com/", present: true, style: "codelab" },
-  { name: "The AI Collective", role: "Director of Workshops", logo: "aic.png", url: "https://www.aicdavis.org/", present: true, style: "aic" },
-  { name: "GDSC", role: "Technical Lead", detail: "Google Developer Student Club", logo: "gdsc.png", url: "https://developers.google.com/community/gdsc", present: false, style: "gdsc" },
-  { name: "#include", role: "Developer Member", logo: "include.svg", url: "https://includedavis.com/", present: false, style: "include" },
+  { name: "CodeLab", description: "Student teams building software and design projects for real clients at UC Davis.", role: "VP of Projects", logo: "codelab.svg", url: "https://codelabdavis.com/", present: true, style: "codelab" },
+  { name: "The AI Collective", description: "A UC Davis community exploring AI through hands-on projects, workshops, and research.", role: "Director of Workshops", logo: "aic.png", url: "https://www.aicdavis.org/", present: true, style: "aic" },
+  { name: "GDSC", description: "A student developer community learning new technologies and building projects together.", role: "Technical Lead", detail: "Google Developer Student Club", logo: "gdsc.png", url: "https://developers.google.com/community/gdsc", present: false, style: "gdsc" },
+  { name: "#include", description: "UC Davis developers and designers creating websites and digital tools for the community.", role: "Developer Member", logo: "include.svg", url: "https://includedavis.com/", present: false, style: "include" },
 ];
 
 export default function Organizations() {
@@ -17,6 +17,7 @@ export default function Organizations() {
               <div className="organization-name"><h3>{org.name}</h3>{org.present && <span className="organization-present">present</span>}</div>
               {org.detail && <p className="organization-detail">{org.detail}</p>}
               <p className="organization-role">{org.role}</p>
+              <p className="organization-description">{org.description}</p>
               <span className="organization-link">Visit website <span aria-hidden="true">↗</span></span>
             </a>
           ))}

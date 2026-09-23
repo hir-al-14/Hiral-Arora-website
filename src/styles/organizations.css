@@ -16,9 +16,11 @@
 .organization h3 { font: 500 1.15rem var(--font-main); margin: 0; }
 .organization-present { font: 10px var(--font-mono); color: #4b6b62; background: #e2ede8; padding: 4px 7px; border-radius: 4px; }
 .organization-detail { font-size: 11px; line-height: 1.5; color: #65768b; margin: 0.5rem 0 0; }
-.organization-role { font-size: 13px; color: #586b82; line-height: 1.5; margin: 0.75rem 0 1.75rem; }
+.organization-role { font-size: 13px; color: #586b82; line-height: 1.5; margin: 0.75rem 0 0; }
 .organization-link { margin-top: auto; font-size: 12px; color: #706695; }
 .organization:focus-visible { outline: 2px solid #706695; outline-offset: 5px; }
 @media (max-width: 1000px) { .organizations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 500px) { .organizations-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .organization { transition: none; } }
+
+.organization-description { font-size: 13px; line-height: 1.65; color: #65768b; margin: 0.75rem 0 1.5rem; }
