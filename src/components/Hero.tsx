@@ -1,24 +1,26 @@
 function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-content">
+    <div className="hero">
+      <div className="hero-copy">
         <p className="hero-status">
           <span />
-          probably tinkering with some code 
+          probably building something
         </p>
 
-        <h1>
-          <span className="hero-hello">heyy, i'm Hiral!</span>
-          <br />
-          i build software +
-          <br />
-          <em>intelligent systems.</em>
+        <h1 className="hero-greeting">
+          heyy, i'm Hiral!
         </h1>
 
-        <p className="hero-description">
-          Computer Science + Electrical Engineering @ UC Davis
-          I like building software, experimenting with machine learning, 
-          and sometimes connecting way too many wires to an Arduino.
+        <p className="hero-intro">
+          CS + EE student who builds software —
+          <br />
+          usually after thinking{" "}
+          <span>“wait... can i make that?”</span>
+        </p>
+
+        <p className="hero-note">
+          currently running on curiosity, coffee, and{" "}
+          <code>npm run dev</code>
         </p>
 
         <div className="hero-links">
@@ -39,21 +41,23 @@ function Hero() {
           </a>
 
           <a href="#projects">
-            stuff i've built ↓
+            things i've made ↓
           </a>
         </div>
       </div>
 
       <div className="hero-visual">
-        <div className="photo-frame">
-          <div className="photo-placeholder">
-            photo incoming :)
+        <div className="rain-photo">
+          <div className="rain-photo-inner">
+            <div className="photo-placeholder">
+              <span>portrait_01</span>
+              <small>developing...</small>
+            </div>
           </div>
 
-          <span className="photo-corner corner-tl" />
-          <span className="photo-corner corner-tr" />
-          <span className="photo-corner corner-bl" />
-          <span className="photo-corner corner-br" />
+          <span className="photo-drop drop-one" />
+          <span className="photo-drop drop-two" />
+          <span className="photo-drop drop-three" />
 
           <div className="photo-meta">
             <span>HIRAL_01.JPG</span>
@@ -61,7 +65,12 @@ function Hero() {
           </div>
         </div>
       </div>
-    </section>
+
+      <div className="hero-scroll">
+        <span>↓</span>
+        keep scrolling
+      </div>
+    </div>
   );
 }
 

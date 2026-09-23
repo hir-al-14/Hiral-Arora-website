@@ -2,19 +2,19 @@
   min-height: 84px;
 
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
 
   gap: 2rem;
 
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(220, 230, 242, 0.16);
 }
 
 
 /* LOGO / NAME */
 
 .navbar-logo {
-  color: var(--text);
+  color: #f3f6fa;
 
   font-size: 16px;
   font-weight: 700;
@@ -26,7 +26,7 @@
 }
 
 .navbar-logo:hover {
-  color: var(--blue-bright);
+  color: #b8b4ed;
 }
 
 
@@ -42,7 +42,7 @@
 .navbar-links a {
   position: relative;
 
-  color: var(--text-secondary);
+  color: rgba(226, 234, 243, 0.7);
 
   font-size: 14px;
   font-weight: 500;
@@ -53,11 +53,8 @@
 }
 
 .navbar-links a:hover {
-  color: var(--blue-bright);
+  color: #f3f6fa;
 }
-
-
-/* Small dot underneath hovered link */
 
 .navbar-links a::after {
   content: "";
@@ -72,7 +69,7 @@
 
   border-radius: 50%;
 
-  background: var(--blue-bright);
+  background: #aaa7e8;
 
   opacity: 0;
 

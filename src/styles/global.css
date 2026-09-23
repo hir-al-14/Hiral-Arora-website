@@ -81,7 +81,43 @@ img {
   overflow-x: hidden;
 }
 
-.page-content {
+.site {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+.intro-world {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 25%,
+      rgba(173, 161, 232, 0.2),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 75%,
+      rgba(96, 151, 207, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #111c2b 0%,
+      #16283c 48%,
+      #252342 100%
+    );
+
+  color: #f3f6fa;
+}
+
+.intro-content {
   position: relative;
   z-index: 2;
 
@@ -90,11 +126,8 @@ img {
   margin-inline: auto;
 }
 
-
-/* RESPONSIVE */
-
 @media (max-width: 700px) {
-  .page-content {
+  .intro-content {
     width: min(100% - 1.5rem, 1180px);
   }
 }

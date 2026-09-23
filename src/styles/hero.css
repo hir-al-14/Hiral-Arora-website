@@ -1,106 +1,143 @@
+/* ------------------------------
+   HERO
+------------------------------ */
+
 .hero {
+  position: relative;
+
   min-height: calc(100svh - 84px);
 
   display: grid;
   grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(240px, 0.65fr);
+    minmax(0, 1.2fr)
+    minmax(260px, 0.8fr);
 
   align-items: center;
 
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(3rem, 8vw, 8rem);
 
-  padding-block: clamp(4rem, 10vh, 8rem);
+  padding:
+    clamp(4rem, 9vh, 7rem)
+    0
+    clamp(5rem, 10vh, 8rem);
 }
 
-.hero-content {
-  min-width: 0;
-}
 
-.hero-hello {
-  font-family: var(--font-fun);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-}
+/* ------------------------------
+   COPY
+------------------------------ */
 
-/* STATUS */
+.hero-copy {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 660px;
+}
 
 .hero-status {
   display: flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 9px;
 
-  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 1.5rem;
 
-  color: var(--text-secondary);
+  color: rgba(222, 231, 241, 0.62);
 
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-family: var(--font-fun);
+  font-size: 14px;
   font-weight: 500;
 
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 .hero-status span {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 
   flex-shrink: 0;
 
   border-radius: 50%;
 
-  background: var(--pink);
+  background: #d6a2c0;
 
   box-shadow:
-    0 0 14px
-    color-mix(in srgb, var(--pink) 45%, transparent);
+    0 0 14px rgba(214, 162, 192, 0.45);
 }
 
 
-/* TITLE */
+/* ------------------------------
+   GREETING
+------------------------------ */
 
-.hero h1 {
+.hero-greeting {
   margin: 0;
 
-  font-size: clamp(2.8rem, 5.2vw, 5.5rem);
-  font-weight: 550;
+  color: #f5f7fb;
+
+  font-family: var(--font-fun);
+
+  font-size: clamp(2.6rem, 5vw, 4.7rem);
+  font-weight: 500;
 
   line-height: 1;
-  letter-spacing: -0.05em;
-}
 
-.hero h1 em {
-  display: inline-block;
-
-  font-style: normal;
-
-  background: linear-gradient(
-    90deg,
-    var(--blue-bright),
-    var(--lavender)
-  );
-
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.04em;
 }
 
 
-/* DESCRIPTION */
+/* ------------------------------
+   MAIN SENTENCE
+------------------------------ */
 
-.hero-description {
-  width: min(100%, 620px);
+.hero-intro {
+  max-width: 610px;
 
-  margin: clamp(2rem, 4vw, 2.75rem) 0 0;
+  margin: 1.75rem 0 0;
 
-  color: var(--text-secondary);
+  color: rgba(237, 242, 248, 0.86);
 
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  line-height: 1.7;
+  font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+  font-weight: 450;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.02em;
+}
+
+.hero-intro span {
+  color: #b8b4ed;
+
+  font-weight: 600;
 }
 
 
-/* LINKS */
+/* ------------------------------
+   LITTLE NOTE
+------------------------------ */
+
+.hero-note {
+  margin: 1.4rem 0 0;
+
+  color: rgba(208, 219, 232, 0.55);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.hero-note code {
+  color: #a9cbed;
+
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+
+/* ------------------------------
+   LINKS
+------------------------------ */
 
 .hero-links {
   display: flex;
@@ -108,13 +145,13 @@
 
   gap: 1rem 1.75rem;
 
-  margin-top: clamp(2rem, 4vw, 2.75rem);
+  margin-top: 2rem;
 }
 
 .hero-links a {
-  color: var(--text);
+  color: rgba(239, 244, 249, 0.82);
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   text-decoration: none;
@@ -125,49 +162,145 @@
 }
 
 .hero-links a:hover {
-  color: var(--blue-bright);
+  color: #b8b4ed;
 
   transform: translateY(-2px);
 }
 
 
-/* PHOTO */
+/* ------------------------------
+   PHOTO
+------------------------------ */
 
 .hero-visual {
-  width: 100%;
-
   display: flex;
   justify-content: flex-end;
+
+  width: 100%;
 }
 
-.photo-frame {
+.rain-photo {
   position: relative;
 
-  width: min(100%, 360px);
+  width: min(100%, 330px);
 
   padding: 10px;
+}
+
+.rain-photo-inner {
+  padding: 6px;
+
+  border: 1px solid rgba(216, 227, 240, 0.18);
+
+  background: rgba(218, 229, 241, 0.04);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(184, 180, 237, 0.035);
+
+  backdrop-filter: blur(4px);
 }
 
 .photo-placeholder {
   width: 100%;
   aspect-ratio: 4 / 5;
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  border: 1px solid var(--border);
+  gap: 5px;
+
+  border: 1px solid rgba(218, 228, 239, 0.12);
 
   background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(184, 180, 237, 0.14),
+      transparent 35%
+    ),
     linear-gradient(
       145deg,
-      color-mix(in srgb, var(--blue) 10%, transparent),
-      color-mix(in srgb, var(--lavender) 10%, transparent)
+      rgba(91, 143, 196, 0.12),
+      rgba(170, 167, 232, 0.07)
     );
 
-  color: var(--text-secondary);
-
-  font-size: 13px;
+  font-family: var(--font-mono);
 }
+
+.photo-placeholder span {
+  color: rgba(240, 244, 249, 0.72);
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+}
+
+.photo-placeholder small {
+  color: rgba(215, 225, 236, 0.4);
+
+  font-size: 10px;
+}
+
+
+/* ------------------------------
+   PHOTO DROPLETS
+------------------------------ */
+
+.photo-drop {
+  position: absolute;
+
+  border: 1px solid rgba(208, 229, 247, 0.24);
+  border-radius: 50% 50% 55% 45%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.32),
+      rgba(125, 174, 216, 0.06) 55%,
+      transparent 70%
+    );
+
+  box-shadow:
+    inset -2px -3px 5px rgba(84, 122, 160, 0.12),
+    0 3px 8px rgba(0, 0, 0, 0.12);
+
+  pointer-events: none;
+}
+
+.drop-one {
+  top: 18%;
+  right: 2px;
+
+  width: 13px;
+  height: 17px;
+
+  transform: rotate(8deg);
+}
+
+.drop-two {
+  top: 47%;
+  left: 1px;
+
+  width: 9px;
+  height: 12px;
+
+  transform: rotate(-12deg);
+}
+
+.drop-three {
+  right: 7%;
+  bottom: 17%;
+
+  width: 7px;
+  height: 10px;
+}
+
+
+/* ------------------------------
+   PHOTO METADATA
+------------------------------ */
 
 .photo-meta {
   display: flex;
@@ -177,60 +310,48 @@
 
   margin-top: 10px;
 
-  color: var(--text-secondary);
+  color: rgba(205, 218, 232, 0.45);
 
-  font-family: monospace;
-  font-size: 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
 
   letter-spacing: 0.08em;
 }
 
 
-/* Registration marks */
+/* ------------------------------
+   SCROLL HINT
+------------------------------ */
 
-.photo-corner {
+.hero-scroll {
   position: absolute;
 
-  width: 18px;
-  height: 18px;
+  left: 50%;
+  bottom: 1.5rem;
 
-  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3px;
+
+  color: rgba(218, 228, 238, 0.35);
+
+  font-size: 10px;
+
+  transform: translateX(-50%);
 }
 
-.corner-tl {
-  top: 0;
-  left: 0;
+.hero-scroll span {
+  color: #aaa7e8;
 
-  border-top: 1px solid var(--blue);
-  border-left: 1px solid var(--blue);
-}
-
-.corner-tr {
-  top: 0;
-  right: 0;
-
-  border-top: 1px solid var(--blue);
-  border-right: 1px solid var(--blue);
-}
-
-.corner-bl {
-  bottom: 26px;
-  left: 0;
-
-  border-bottom: 1px solid var(--blue);
-  border-left: 1px solid var(--blue);
-}
-
-.corner-br {
-  right: 0;
-  bottom: 26px;
-
-  border-right: 1px solid var(--blue);
-  border-bottom: 1px solid var(--blue);
+  font-size: 15px;
 }
 
 
-/* RESPONSIVE */
+/* ------------------------------
+   TABLET
+------------------------------ */
 
 @media (max-width: 850px) {
   .hero {
@@ -238,34 +359,58 @@
 
     min-height: auto;
 
-    gap: 3.5rem;
+    gap: 4rem;
 
-    padding-block: clamp(4.5rem, 12vw, 7rem);
+    padding:
+      clamp(4.5rem, 12vw, 6.5rem)
+      0
+      6rem;
   }
 
-  .hero-content {
-    width: min(100%, 720px);
+  .hero-copy {
+    max-width: 680px;
   }
 
-  .hero h1 {
-    font-size: clamp(2.8rem, 10vw, 5rem);
+  .hero-greeting {
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
   }
 
   .hero-visual {
     justify-content: flex-start;
   }
 
-  .photo-frame {
-    width: min(75vw, 360px);
+  .rain-photo {
+    width: min(72vw, 330px);
+  }
+
+  .hero-scroll {
+    display: none;
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: clamp(2.5rem, 11.5vw, 3.6rem);
+
+/* ------------------------------
+   PHONE
+------------------------------ */
+
+@media (max-width: 500px) {
+  .hero {
+    gap: 3rem;
   }
 
-  .photo-frame {
-    width: min(88vw, 340px);
+  .hero-greeting {
+    font-size: clamp(2.6rem, 12vw, 3.5rem);
+  }
+
+  .hero-intro {
+    font-size: 1.15rem;
+  }
+
+  .hero-intro br {
+    display: none;
+  }
+
+  .rain-photo {
+    width: min(88vw, 310px);
   }
 }
