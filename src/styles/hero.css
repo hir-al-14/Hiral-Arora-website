@@ -1,39 +1,44 @@
-/* ------------------------------
+/* ==========================================================
    HERO
------------------------------- */
+========================================================== */
 
 .hero {
   position: relative;
 
-  min-height: calc(100svh - 84px);
+  min-height: clamp(560px, 68svh, 680px);
 
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.2fr)
-    minmax(260px, 0.8fr);
+    minmax(280px, 0.8fr);
 
   align-items: center;
 
   gap: clamp(3rem, 8vw, 8rem);
 
   padding:
-    clamp(4rem, 9vh, 7rem)
+    clamp(2.75rem, 5vh, 4rem)
     0
-    clamp(5rem, 10vh, 8rem);
+    clamp(3rem, 5vh, 4rem);
 }
 
 
-/* ------------------------------
-   COPY
------------------------------- */
+/* ==========================================================
+   LEFT SIDE
+========================================================== */
 
 .hero-copy {
   position: relative;
-
-  z-index: 2;
+  z-index: 3;
 
   max-width: 660px;
 }
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
 
 .hero-status {
   display: flex;
@@ -67,9 +72,9 @@
 }
 
 
-/* ------------------------------
+/* ==========================================================
    GREETING
------------------------------- */
+========================================================== */
 
 .hero-greeting {
   margin: 0;
@@ -78,7 +83,7 @@
 
   font-family: var(--font-fun);
 
-  font-size: clamp(2.6rem, 5vw, 4.7rem);
+  font-size: clamp(2.6rem, 4.6vw, 4.5rem);
   font-weight: 500;
 
   line-height: 1;
@@ -87,9 +92,9 @@
 }
 
 
-/* ------------------------------
-   MAIN SENTENCE
------------------------------- */
+/* ==========================================================
+   INTRO
+========================================================== */
 
 .hero-intro {
   max-width: 610px;
@@ -98,7 +103,7 @@
 
   color: rgba(237, 242, 248, 0.86);
 
-  font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
   font-weight: 450;
 
   line-height: 1.5;
@@ -113,9 +118,9 @@
 }
 
 
-/* ------------------------------
-   LITTLE NOTE
------------------------------- */
+/* ==========================================================
+   NERD NOTE
+========================================================== */
 
 .hero-note {
   margin: 1.4rem 0 0;
@@ -135,9 +140,9 @@
 }
 
 
-/* ------------------------------
+/* ==========================================================
    LINKS
------------------------------- */
+========================================================== */
 
 .hero-links {
   display: flex;
@@ -149,7 +154,12 @@
 }
 
 .hero-links a {
-  color: rgba(239, 244, 249, 0.82);
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #b8b4ed;
 
   font-size: 14px;
   font-weight: 600;
@@ -162,145 +172,222 @@
 }
 
 .hero-links a:hover {
-  color: #b8b4ed;
+  color: #d7d3ff;
 
   transform: translateY(-2px);
 }
 
 
-/* ------------------------------
-   PHOTO
------------------------------- */
+/* ==========================================================
+   EXTERNAL LINK ARROW
+========================================================== */
+
+.external-arrow {
+  position: relative;
+
+  width: 10px;
+  height: 10px;
+
+  flex-shrink: 0;
+}
+
+.external-arrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: 1px;
+  right: 1px;
+
+  width: 5px;
+  height: 5px;
+
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+
+.external-arrow::after {
+  content: "";
+
+  position: absolute;
+
+  top: 5px;
+  left: 1px;
+
+  width: 9px;
+  height: 1.5px;
+
+  background: currentColor;
+
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+
+/* ==========================================================
+   DOWN ARROW
+========================================================== */
+
+.down-arrow {
+  display: inline-block;
+
+  font-size: 13px;
+
+  transition: transform 0.2s ease;
+}
+
+.hero-links a:hover .down-arrow {
+  transform: translateY(3px);
+}
+
+
+/* ==========================================================
+   RIGHT SIDE
+========================================================== */
 
 .hero-visual {
+  position: relative;
+  z-index: 3;
+
   display: flex;
   justify-content: flex-end;
 
   width: 100%;
 }
 
-.rain-photo {
+
+/* ==========================================================
+   PORTRAIT WRAPPER
+
+   The entire thing floats together.
+========================================================== */
+
+.portrait-wrap {
   position: relative;
 
-  width: min(100%, 330px);
+  width: min(100%, 365px);
 
-  padding: 10px;
+  animation:
+    portrait-float
+    6s
+    ease-in-out
+    infinite;
 }
 
-.rain-photo-inner {
-  padding: 6px;
 
-  border: 1px solid rgba(216, 227, 240, 0.18);
+/* ==========================================================
+   BUBBLY RECTANGLE
 
-  background: rgba(218, 229, 241, 0.04);
+   This is intentionally NOT a perfect rounded rectangle.
 
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.2),
-    inset 0 0 30px rgba(184, 180, 237, 0.035);
+   Different horizontal + vertical radii make each corner
+   feel slightly inflated / watery.
+========================================================== */
 
-  backdrop-filter: blur(4px);
-}
+.bubble-border {
+  position: relative;
 
-.photo-placeholder {
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  padding: 7px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid rgba(208, 213, 246, 0.28);
 
-  gap: 5px;
-
-  border: 1px solid rgba(218, 228, 239, 0.12);
+  /*
+    Uneven corners make it feel soft and puffy
+    instead of like a normal rounded card.
+  */
+  border-radius:
+    13% 9% 15% 8% /
+    10% 15% 8% 13%;
 
   background:
-    radial-gradient(
-      circle at 70% 20%,
-      rgba(184, 180, 237, 0.14),
-      transparent 35%
-    ),
     linear-gradient(
       145deg,
-      rgba(91, 143, 196, 0.12),
-      rgba(170, 167, 232, 0.07)
-    );
-
-  font-family: var(--font-mono);
-}
-
-.photo-placeholder span {
-  color: rgba(240, 244, 249, 0.72);
-
-  font-size: 11px;
-
-  letter-spacing: 0.08em;
-}
-
-.photo-placeholder small {
-  color: rgba(215, 225, 236, 0.4);
-
-  font-size: 10px;
-}
-
-
-/* ------------------------------
-   PHOTO DROPLETS
------------------------------- */
-
-.photo-drop {
-  position: absolute;
-
-  border: 1px solid rgba(208, 229, 247, 0.24);
-  border-radius: 50% 50% 55% 45%;
-
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      rgba(255, 255, 255, 0.32),
-      rgba(125, 174, 216, 0.06) 55%,
-      transparent 70%
+      rgba(210, 220, 248, 0.11),
+      rgba(187, 180, 235, 0.07)
     );
 
   box-shadow:
-    inset -2px -3px 5px rgba(84, 122, 160, 0.12),
-    0 3px 8px rgba(0, 0, 0, 0.12);
+    0 20px 55px rgba(3, 11, 24, 0.18),
+    0 0 26px rgba(199, 199, 241, 0.08),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+
+/* outer watery outline */
+.bubble-border::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  z-index: -1;
+
+  border: 1px solid rgba(207, 211, 242, 0.14);
+
+  border-radius:
+    16% 10% 14% 9% /
+    11% 16% 9% 14%;
+
+  background: rgba(190, 195, 232, 0.025);
+
+  filter: blur(0.2px);
 
   pointer-events: none;
 }
 
-.drop-one {
-  top: 18%;
-  right: 2px;
 
-  width: 13px;
-  height: 17px;
+/* ==========================================================
+   INNER PHOTO
+========================================================== */
 
-  transform: rotate(8deg);
+.bubble-border-inner {
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  border-radius:
+    12% 8% 13% 7% /
+    9% 13% 7% 12%;
 }
 
-.drop-two {
-  top: 47%;
-  left: 1px;
+.hero-photo {
+  display: block;
 
-  width: 9px;
-  height: 12px;
+  width: 100%;
+  height: 100%;
 
-  transform: rotate(-12deg);
-}
+  object-fit: cover;
+  object-position: center;
 
-.drop-three {
-  right: 7%;
-  bottom: 17%;
-
-  width: 7px;
-  height: 10px;
+  transform: scale(1.01);
 }
 
 
-/* ------------------------------
+/* ==========================================================
+   FLOAT ANIMATION
+========================================================== */
+
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-0.2deg);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -6px, 0)
+      rotate(0.15deg);
+  }
+}
+
+
+/* ==========================================================
    PHOTO METADATA
------------------------------- */
+========================================================== */
 
 .photo-meta {
   display: flex;
@@ -308,9 +395,14 @@
 
   gap: 1rem;
 
-  margin-top: 10px;
+  width: 94%;
 
-  color: rgba(205, 218, 232, 0.45);
+  margin:
+    13px
+    auto
+    0;
+
+  color: rgba(205, 218, 232, 0.38);
 
   font-family: var(--font-mono);
   font-size: 9px;
@@ -319,52 +411,22 @@
 }
 
 
-/* ------------------------------
-   SCROLL HINT
------------------------------- */
-
-.hero-scroll {
-  position: absolute;
-
-  left: 50%;
-  bottom: 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 3px;
-
-  color: rgba(218, 228, 238, 0.35);
-
-  font-size: 10px;
-
-  transform: translateX(-50%);
-}
-
-.hero-scroll span {
-  color: #aaa7e8;
-
-  font-size: 15px;
-}
-
-
-/* ------------------------------
+/* ==========================================================
    TABLET
------------------------------- */
+========================================================== */
 
 @media (max-width: 850px) {
   .hero {
-    grid-template-columns: 1fr;
-
     min-height: auto;
 
-    gap: 4rem;
+    grid-template-columns: 1fr;
+
+    gap: 3.5rem;
 
     padding:
-      clamp(4.5rem, 12vw, 6.5rem)
+      4.5rem
       0
-      6rem;
+      5rem;
   }
 
   .hero-copy {
@@ -372,30 +434,31 @@
   }
 
   .hero-greeting {
-    font-size: clamp(2.8rem, 10vw, 4.5rem);
+    font-size: clamp(2.8rem, 10vw, 4.3rem);
   }
 
   .hero-visual {
     justify-content: flex-start;
   }
 
-  .rain-photo {
-    width: min(72vw, 330px);
-  }
-
-  .hero-scroll {
-    display: none;
+  .portrait-wrap {
+    width: min(75vw, 380px);
   }
 }
 
 
-/* ------------------------------
+/* ==========================================================
    PHONE
------------------------------- */
+========================================================== */
 
 @media (max-width: 500px) {
   .hero {
     gap: 3rem;
+
+    padding:
+      3.5rem
+      0
+      4rem;
   }
 
   .hero-greeting {
@@ -410,7 +473,31 @@
     display: none;
   }
 
-  .rain-photo {
-    width: min(88vw, 310px);
+  .hero-note {
+    font-size: 12px;
+  }
+
+  .hero-links {
+    gap: 0.9rem 1.25rem;
+  }
+
+  .portrait-wrap {
+    width: min(88vw, 340px);
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-wrap {
+    animation: none;
+  }
+
+  .hero-links a,
+  .down-arrow {
+    transition: none;
   }
 }

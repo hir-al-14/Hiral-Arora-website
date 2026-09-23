@@ -29,7 +29,11 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            github ↗
+            github
+            <span
+              className="external-arrow"
+              aria-hidden="true"
+            />
           </a>
 
           <a
@@ -37,38 +41,42 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            linkedin ↗
+            linkedin
+            <span
+              className="external-arrow"
+              aria-hidden="true"
+            />
           </a>
 
           <a href="#projects">
-            things i've made ↓
+            things i've made
+            <span
+              className="down-arrow"
+              aria-hidden="true"
+            >
+              ↓
+            </span>
           </a>
         </div>
       </div>
 
       <div className="hero-visual">
-        <div className="rain-photo">
-          <div className="rain-photo-inner">
-            <div className="photo-placeholder">
-              <span>portrait_01</span>
-              <small>developing...</small>
+        <div className="portrait-wrap">
+          <div className="bubble-border">
+            <div className="bubble-border-inner">
+              <img
+                src="/images/hiral-portrait.jpeg"
+                alt="Hiral Arora"
+                className="hero-photo"
+              />
             </div>
           </div>
 
-          <span className="photo-drop drop-one" />
-          <span className="photo-drop drop-two" />
-          <span className="photo-drop drop-three" />
-
           <div className="photo-meta">
-            <span>HIRAL_01.JPG</span>
+            <span>HIRAL-ARORA</span>
             <span>DAVIS, CA</span>
           </div>
         </div>
-      </div>
-
-      <div className="hero-scroll">
-        <span>↓</span>
-        keep scrolling
       </div>
     </div>
   );

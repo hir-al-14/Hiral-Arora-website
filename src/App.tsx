@@ -13,6 +13,12 @@ function App() {
           <Hero />
         </div>
       </section>
+
+      <section className="gallery-world">
+        <div className="gallery-content">
+          {/* we'll build the photo wall here next */}
+        </div>
+      </section>
     </div>
   );
 }
