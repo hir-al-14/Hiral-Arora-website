@@ -74,3 +74,92 @@
   .about-gallery { max-width: 560px; margin-inline: auto; }
   .about-copy { max-width: 600px; }
 }
+
+/* Six irregular hanging positions, independent of the shuffled photo order. */
+.gallery-frame {
+  --frame-dark: #6f6048;
+  --frame-mid: #a99a7a;
+  --frame-light: #d1c7ae;
+  position: absolute;
+  margin: 0;
+  padding: clamp(7px, 1.1vw, 13px);
+  border: 2px solid var(--frame-dark);
+  background: linear-gradient(135deg, var(--frame-light), var(--frame-mid) 35%, var(--frame-dark) 70%, var(--frame-mid));
+  box-shadow:
+    inset 0 0 0 2px var(--frame-light),
+    inset 0 0 0 4px var(--frame-dark),
+    inset 0 0 0 5px var(--frame-mid),
+    2px 4px 5px rgba(35, 42, 50, 0.17),
+    5px 14px 22px rgba(35, 42, 50, 0.12);
+  transform: perspective(900px) rotate(var(--angle));
+}
+
+.gallery-frame::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--frame-light);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.gallery-mat {
+  width: 100%;
+  height: 100%;
+  padding: 8%;
+  background: #e9e9e3;
+  box-shadow: 0 0 0 1px var(--frame-dark), inset 1px 2px 4px #353b4338;
+}
+
+.gallery-placeholder,
+.gallery-mat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(150deg, #d9e2e7, #c8d3dc);
+  box-shadow: inset 1px 2px 4px #43515e20;
+}
+
+.gallery-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.gallery-placeholder span {
+  color: #536574;
+  font-family: var(--font-mono);
+  font-size: clamp(0.5rem, 0.75vw, 0.65rem);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.gallery-frame--1 { width: 34%; height: 39%; top: 3%; left: 34%; --angle: 2deg; }
+.gallery-frame--2 { width: 27%; height: 28%; top: 15%; left: 1%; --angle: -4deg; }
+.gallery-frame--3 { width: 24%; height: 23%; top: 21%; left: 74%; --angle: 4deg; }
+.gallery-frame--4 { width: 38%; height: 28%; top: 49%; left: 6%; --angle: -3deg; }
+.gallery-frame--5 { width: 30%; height: 39%; top: 49%; left: 51%; --angle: 3deg; }
+.gallery-frame--6 { width: 27%; height: 19%; top: 79%; left: 18%; --angle: 1deg; }
+
+.gallery-frame--2,
+.gallery-frame--5 {
+  --frame-dark: #302d2c;
+  --frame-mid: #5b514b;
+  --frame-light: #83776a;
+  background:
+    repeating-linear-gradient(93deg, transparent 0 3px, #211d191c 3px 4px),
+    linear-gradient(135deg, var(--frame-light), var(--frame-dark) 55%, var(--frame-mid));
+}
+
+.gallery-frame--3,
+.gallery-frame--6 {
+  --frame-dark: #65675c;
+  --frame-mid: #969780;
+  --frame-light: #c1c0a9;
+  padding: clamp(6px, 0.8vw, 10px);
+}
+
+.gallery-frame--3 .gallery-placeholder { background: #d5dce2; }
+.gallery-frame--4 .gallery-placeholder { background: #d4d8e2; }
+.gallery-frame--6 .gallery-placeholder { background: #dce3e5; }
