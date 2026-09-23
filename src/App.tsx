@@ -4,10 +4,15 @@ import Rain from "./components/Rain";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Research from "./components/Research";
+import Hardware from "./components/Hardware";
+
+import Organizations from "./components/Organizations";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="site">
+    <div className="site" id="top">
       <section className="intro-world">
         <Rain />
 
@@ -25,6 +30,10 @@ function App() {
 
       <Experience />
       <Projects />
+      <Research />
+      <Hardware />
+      <Organizations />
+      <Footer />
     </div>
   );
 }

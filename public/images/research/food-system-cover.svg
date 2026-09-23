@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none">
+  <rect width="1200" height="720" fill="#dfe7f1"/>
+  <rect x="115" y="60" width="970" height="600" fill="#f5f7fa"/>
+  <path d="M165 126H1035" stroke="#a2b3cc"/>
+  <text x="165" y="103" fill="#566b8c" font-family="monospace" font-size="18" letter-spacing="2">UKCI 2023 / PUBLISHED RESEARCH</text>
+  <text x="165" y="220" fill="#293b59" font-family="Georgia, serif" font-size="49">
+    <tspan x="165">An Exploratory Ukraine</tspan>
+    <tspan x="165" dy="60">Rising Commodities</tspan>
+    <tspan x="165" dy="60">Price Analysis</tspan>
+  </text>
+  <text x="165" y="429" fill="#647293" font-family="Georgia, serif" font-size="31">Towards a Resilient Food System</text>
+  <path d="M165 490H1035" stroke="#bec9d9"/>
+  <text x="165" y="533" fill="#465570" font-family="sans-serif" font-size="21">Hiral Arora · Ambikesh Jayal · Edmond Prakash</text>
+  <text x="165" y="586" fill="#647293" font-family="monospace" font-size="16">Advances in Computational Intelligence Systems</text>
+  <text x="165" y="614" fill="#647293" font-family="monospace" font-size="16">Springer · 2024 · pp. 249–258</text>
+</svg>

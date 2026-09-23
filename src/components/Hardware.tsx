@@ -1,77 +1,55 @@
-import SectionHeading from "./SectionHeading";
+import raspberryPi from "../assets/raspberry-pi-4b.svg";
 
-const experiments = [
+const projects = [
   {
-    id: "HW.01",
-    name: "safety wearable",
-    description:
-      "Arduino prototype using force and tilt sensing to detect unsafe conditions in real time.",
-    parts: ["Arduino", "FSR", "tilt sensor", "LCD"],
-    status: "prototype",
+    title: "Backpack Weight Monitor",
+    image: "/images/hardware/backpack-monitor.png",
+    alt: "UC Davis team poster showing the backpack weight monitor circuit, design, and test results",
+    label: "Arduino · working prototype",
+    description: "A strap-mounted pressure sensor system that checks backpack load against a user-set limit, with an LCD readout and buzzer alerts.",
   },
   {
-    id: "HW.02",
-    name: "computer vision experiments",
-    description:
-      "Small camera-based experiments combining pose estimation, OpenCV, and physical interaction.",
-    parts: ["OpenCV", "MediaPipe", "camera"],
-    status: "ongoing",
-  },
-  {
-    id: "HW.03",
-    name: "tiny computers + sensors",
-    description:
-      "An excuse to keep experimenting with ESPs, sensors, displays, and eventually a cyberdeck.",
-    parts: ["ESP32", "sensors", "displays"],
-    status: "always tinkering",
+    title: "Cyberdeck",
+    image: "",
+    alt: "",
+    label: "Raspberry Pi · in progress",
+    description: "A personal touchscreen cyberdeck with an animated dog companion. Bringing wardrobe, tasks, and GitHub activity together with my own day-planning algorithm.",
   },
 ];
 
-function Hardware() {
+export default function Hardware() {
   return (
-    <section
-      className="content-section hardware"
-      id="hardware"
-    >
-      <SectionHeading
-        number="03"
-        title="hardware"
-        description="sometimes software is more fun when there are wires involved."
-      />
-
-      <div className="hardware-grid">
-        {experiments.map((experiment) => (
-          <article
-            className="hardware-item"
-            key={experiment.id}
-          >
-            <div className="hardware-meta">
-              <span>{experiment.id}</span>
-
-              <span className="hardware-status">
-                <i />
-                {experiment.status}
-              </span>
+    <section className="hardware" id="hardware" aria-labelledby="hardware-heading">
+      <div className="hardware-inner">
+        <div className="hardware-heading"><h2 id="hardware-heading">Hardware</h2><span>Code, circuits &amp; things I can hold.</span></div>
+        <div className="hardware-workbench">
+          <svg className="hardware-cables" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+            <path className="hardware-cable-shadow" d="M515 220C460 220 495 340 432 340S405 185 350 185M685 155C750 155 690 65 760 65S790 210 850 210" />
+            <path className="hardware-cable" d="M515 220C460 220 495 340 432 340S405 185 350 185" />
+            <path className="hardware-cable" d="M685 155C750 155 690 65 760 65S790 210 850 210" />
+          </svg>
+          {projects.map((project, index) => (
+            <article className={`hardware-project hardware-project-${index}`} key={project.title}>
+              {project.image ? (
+                <a className="hardware-image" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} poster`}>
+                  <img src={project.image} alt={project.alt} loading="lazy" />
+                </a>
+              ) : null}
+              <p className="hardware-label">{project.label}</p>
+              <h3>{project.title}</h3>
+              <p className="hardware-description">{project.description}</p>
+            </article>
+          ))}
+          <figure className="hardware-board">
+            <div className="hardware-board-case">
+              <span className="hardware-board-brand">RASPBERRY PI <small>04 / B</small></span>
+              <div className="hardware-board-window"><img src={raspberryPi} alt="Raspberry Pi board illustration, positioned vertically" width="376" height="269" /></div>
+              <span className="hardware-board-detail">GPIO · USB · HDMI</span>
             </div>
-
-            <h3>{experiment.name}</h3>
-
-            <p>
-              {experiment.description}
-            </p>
-
-            <div className="hardware-parts">
-              {experiment.parts.map((part) => (
-                <span key={part}>
-                  {part}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
+            <figcaption><a href="https://commons.wikimedia.org/wiki/File:RaspberryPi_Model_4B.svg" target="_blank" rel="noreferrer">Board: Jstrom99 / Efa</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a><br />Background removed · rotated</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
   );
 }
-
-export default Hardware;

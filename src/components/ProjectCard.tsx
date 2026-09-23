@@ -1,10 +1,14 @@
 export type Project = {
   title: string;
+  demo?: string;
   description: string;
   stack: string[];
   image?: string;
   imageAlt?: string;
   github?: string;
+  status?: string;
+  website?: string;
+  websiteLabel?: string;
 };
 
 function GithubIcon() {
@@ -29,7 +33,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             <span className="project-github project-github--placeholder" role="img" aria-label={label} title={label}><GithubIcon /></span>
           )}
         </div>
+        {project.status && <span className="project-status">{project.status}</span>}
         <p>{project.description}</p>
+        {project.demo && <a className="project-demo" href={project.demo} target="_blank" rel="noreferrer" aria-label={`Watch ${project.title} demo`}>Watch demo <span aria-hidden="true">↗</span></a>}
+        {project.website && <a className="project-website" href={project.website} target="_blank" rel="noreferrer">{project.websiteLabel ?? "Visit website"} ↗</a>}
         <ul className="project-stack" aria-label="Technologies">{project.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul>
       </div>
     </article>

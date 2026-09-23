@@ -1,0 +1,24 @@
+.organizations { background: #eef3f7; padding: clamp(4rem, 7vw, 6rem) 0; color: #293b50; scroll-margin-top: 2rem; }
+.organizations-inner { width: min(100% - 3rem, 1200px); margin-inline: auto; }
+.organizations h2 { font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 var(--font-fun); margin: 0; }
+.organizations-intro { color: #65768b; margin: 1rem 0 2.5rem; line-height: 1.6; }
+.organizations-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.organization { display: flex; flex-direction: column; align-items: flex-start; padding: 1.5rem; background: #f8fafc; border: 1px solid #d7e0ea; border-radius: 12px; color: inherit; text-decoration: none; transition: transform 180ms ease, border-color 180ms ease; }
+.organization:hover { transform: translateY(-4px); border-color: #a8a5ce; }
+.organization-logo { width: 72px; height: 72px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 1.75rem; background: #fff; }
+.organization-logo img { width: 54px; height: 54px; object-fit: contain; }
+.organization-logo.codelab { background: #242132; }
+.organization-logo.codelab img { width: 34px; height: 44px; }
+.organization-logo.aic { background: #101a30; }
+.organization-logo.include { background: #76629a; }
+.organization-logo.include img { width: 40px; height: 40px; }
+.organization-name { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; }
+.organization h3 { font: 500 1.3rem var(--font-fun); margin: 0; }
+.organization-present { font: 10px var(--font-mono); color: #4b6b62; background: #e2ede8; padding: 4px 7px; border-radius: 12px; }
+.organization-detail { font-size: 11px; line-height: 1.5; color: #65768b; margin: 0.5rem 0 0; }
+.organization-role { font-size: 13px; color: #586b82; line-height: 1.5; margin: 0.75rem 0 1.75rem; }
+.organization-link { margin-top: auto; font-size: 12px; color: #706695; }
+.organization:focus-visible { outline: 2px solid #706695; outline-offset: 5px; }
+@media (max-width: 1000px) { .organizations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 500px) { .organizations-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .organization { transition: none; } }
