@@ -1,86 +1,76 @@
-.experience-list {
-  display: flex;
-  flex-direction: column;
+.experience {
+  background: #e7eef5;
+  color: #293b50;
+  border-top: 1px solid #cedbe7;
+  padding: clamp(4rem, 7vw, 7rem) 0;
+  scroll-margin-top: 2rem;
 }
-
-.experience-item {
-  display: grid;
-
-  grid-template-columns:
-    minmax(120px, 0.3fr)
-    minmax(0, 1fr);
-
-  gap: clamp(1.5rem, 5vw, 5rem);
-
-  padding-block: clamp(2rem, 4vw, 3rem);
-
-  border-top: 1px solid var(--border);
+.experience-inner { width: min(100% - 3rem, 1400px); margin-inline: auto; }
+.experience-heading { margin-bottom: 3.5rem; }
+.experience-heading > p, .experience-playing {
+  font: 0.75rem var(--font-mono);
+  color: #62778d;
+  letter-spacing: 0.06em;
 }
-
-.experience-item:last-child {
-  border-bottom: 1px solid var(--border);
+.experience-heading h2 { font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 var(--font-fun); margin: 1rem 0 0.7rem; }
+.experience-heading > span { color: #65768a; font-size: 0.95rem; }
+.experience-layout { display: grid; grid-template-columns: 434px minmax(0, 1fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: start; }
+.experience-selector { display: grid; grid-template-columns: 180px 64px 190px; position: relative; }
+.tape-player {
+  position: relative;
+  align-self: start;
+  margin-top: 35px;
+  height: 245px;
+  padding: 17px 13px;
+  border: 1px solid #7f9ebc;
+  border-radius: 15px 15px 22px 15px;
+  background: #afcce5;
+  box-shadow: inset 2px 2px 0 #e4f0fa, inset -3px -3px 0 #8baccc, 4px 5px 0 #7596b5, 8px 16px 25px #3c536a24;
+  transform: rotate(-3deg);
 }
-
-.experience-date {
-  margin: 0;
-
-  color: var(--text-secondary);
-
-  font-size: 14px;
+.player-brand { display: flex; justify-content: space-between; font: 600 11px var(--font-mono); letter-spacing: 0.12em; }
+.player-brand span { font-weight: 400; font-size: 9px; letter-spacing: 0; }
+.cassette { margin-top: 16px; padding: 9px 8px; background: #d9e7ef; border: 3px solid #6d8aa4; border-radius: 6px; box-shadow: inset 1px 2px 4px #34485b2e; }
+.cassette-label { font: 8px var(--font-mono); text-align: center; color: #475e70; }
+.tape-reels { display: flex; align-items: center; justify-content: space-between; margin: 10px 0; background: #728da3; padding: 4px; border-radius: 20px; }
+.tape-reels i { width: 27px; height: 27px; border: 6px dashed #dde8ef; border-radius: 50%; background: #3f5668; }
+.tape-reels > span { width: 26px; height: 9px; background: #344858; border-radius: 2px; }
+.cassette-name { font: 9px/1.3 var(--font-mono); text-align: center; min-height: 24px; }
+.player-speaker { height: 20px; width: 70px; margin-top: 14px; background: repeating-linear-gradient(0deg, #6d8ba8 0 1px, transparent 1px 4px); }
+.player-controls { display: flex; gap: 5px; margin-top: 12px; }
+.player-controls span { background: #dce9f3; border: 1px solid #829eb6; box-shadow: 0 2px 0 #7c9ab5; padding: 3px 8px; font-size: 10px; border-radius: 3px; }
+.player-controls .player-play { background: #f0e6ef; }
+.player-jack { position: absolute; right: -7px; top: 130px; width: 8px; height: 12px; background: #49657e; border-radius: 2px; }
+.experience-wire { width: 64px; height: 288px; overflow: visible; }
+.experience-wire path { fill: none; stroke: #6e879e; stroke-width: 3; stroke-linecap: round; }
+.experience-wire .wire-shadow { stroke: #354b6520; stroke-width: 6; transform: translateY(2px); }
+.experience-wire circle { fill: #6e879e; }
+.experience-tabs { border-left: 1px solid #bccbd9; }
+.experience-tabs button { display: flex; align-items: center; gap: 10px; width: 100%; height: 72px; border: 0; border-left: 3px solid transparent; margin-left: -2px; padding: 8px 12px; background: transparent; color: #53677c; text-align: left; cursor: pointer; font-size: 14px; line-height: 1.45; }
+.experience-tabs button[aria-selected="true"] { color: #2e5275; border-left-color: #6489ad; background: #d8e5f0; }
+.experience-tabs button:hover { background: #dce7f0; }
+.experience-tabs button:focus-visible, .experience-panel:focus-visible { outline: 2px solid #527ca4; outline-offset: 4px; }
+.track-number { font: 10px var(--font-mono); color: #688198; }
+.player-caption { grid-column: 1 / -1; margin-top: 2rem; font: 11px var(--font-mono); color: #697e90; }
+.experience-panel { min-height: 390px; }
+.experience-playing { margin: 0 0 1.2rem; }
+.experience-panel h3 { font: 500 clamp(1.4rem, 2.1vw, 2rem)/1.35 var(--font-fun); margin: 0; }
+.experience-panel h3 span { color: #4b7197; }
+.experience-date { font: 12px/1.8 var(--font-mono); color: #62768b; margin: 1rem 0; }
+.experience-date span { white-space: nowrap; }
+.experience-project { font-size: 13px; color: #5a7190; margin: 0 0 1rem; }
+.experience-panel ul { padding-left: 1.2rem; margin: 1.7rem 0 0; }
+.experience-panel li { padding-left: 0.5rem; margin-bottom: 1rem; font-size: 1rem; line-height: 1.75; color: #53657a; }
+.experience-panel li::marker { content: '▹ '; color: #6388ad; }
+@media (max-width: 1050px) {
+  .experience-layout { grid-template-columns: minmax(0, 1fr); }
+  .experience-panel { min-height: 0; }
 }
-
-.experience-main h3 {
-  margin: 0;
-
-  font-size: clamp(1.4rem, 2vw, 1.7rem);
-  font-weight: 650;
-}
-
-.experience-role {
-  margin: 0.4rem 0 0;
-
-  color: var(--blue);
-
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.experience-description {
-  max-width: 650px;
-
-  margin: 1.25rem 0 0;
-
-  color: var(--text-secondary);
-
-  font-size: 16px;
-
-  line-height: 1.7;
-}
-
-.experience-tags {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.5rem;
-
-  margin-top: 1.4rem;
-}
-
-.experience-tags span {
-  padding: 0.4rem 0.7rem;
-
-  border: 1px solid var(--border);
-  border-radius: 999px;
-
-  color: var(--text-secondary);
-
-  font-size: 12px;
-}
-
-@media (max-width: 650px) {
-  .experience-item {
-    grid-template-columns: 1fr;
-
-    gap: 0.75rem;
-  }
+@media (max-width: 500px) {
+  .experience-selector { grid-template-columns: 140px 40px minmax(0, 1fr); }
+  .tape-player { padding-inline: 8px; }
+  .experience-wire { width: 40px; }
+  .experience-tabs button { font-size: 12px; padding-inline: 7px; gap: 5px; }
+  .track-number { display: none; }
+  .experience-inner { width: calc(100% - 2rem); }
 }

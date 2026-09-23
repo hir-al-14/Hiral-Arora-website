@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Rain from "./components/Rain";
 import About from "./components/About";
+import Experience from "./components/Experience";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <About />
         </div>
       </section>
+
+      <Experience />
     </div>
   );
 }
