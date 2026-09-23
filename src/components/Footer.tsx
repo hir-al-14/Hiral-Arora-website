@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer" id="contact">
       <div className="footer-inner">
         <div className="footer-note">
-          <div className="footer-coffee" role="img" aria-label="A warm cup of coffee with a heart"><span className="coffee-steam">∿ ∿ ∿</span><span className="coffee-cup">♡</span><span className="coffee-saucer" /></div>
+          <div className="footer-coffee" role="img" aria-label="Iced coffee in a brown takeaway cup with a straw and heart sleeve"><span className="coffee-straw" /><span className="coffee-cup"><i className="coffee-ice" /><i className="coffee-ice" /><span className="coffee-sleeve">♡</span></span><span className="coffee-lid" /></div>
           <p>one more coffee, one more idea.</p>
           <h2>let’s make something lovely.</h2>
           <a className="footer-email" href="mailto:hiral.arora.1418@gmail.com">hiral.arora.1418@gmail.com <span aria-hidden="true">↗</span></a>
