@@ -78,6 +78,7 @@
 
 /* Matte painted wood: broad molding, recessed opening, and visible side depth. */
 .gallery-frame {
+  --engraving: #596b89;
   --frame-dark: #8c9eaf;
   --frame-mid: #bacddd;
   --frame-light: #e3edf5;
@@ -144,38 +145,49 @@
 .gallery-frame--5 { width: 27%; top: 9%; left: 73%; --angle: 3deg; }
 .gallery-frame--6 { width: 27%; top: 61%; left: 73%; --angle: -4deg; }
 
-.gallery-frame--featured .gallery-mat { overflow: hidden; }
+.gallery-frame--featured .gallery-mat,
+.gallery-frame--skating .gallery-mat { overflow: hidden; }
 .gallery-frame--featured img {
-  transform: scale(1.32);
-  transform-origin: 50% 40%;
+  transform: scale(1.18);
+  transform-origin: 50% 0%;
 }
 
 
+.gallery-frame--skating img {
+  transform: scale(1.5);
+  transform-origin: 50% 57%;
+}
+
 .gallery-frame--2 {
+  --engraving: #8d7562;
   --frame-dark: #a9aaa9;
   --frame-mid: #e0e2df;
   --frame-light: #fafbf7;
 }
 
 .gallery-frame--3 {
+  --engraving: #7a5b8a;
   --frame-dark: #a699ab;
   --frame-mid: #d1c5d9;
   --frame-light: #eee7f3;
 }
 
 .gallery-frame--4 {
+  --engraving: #6a5136;
   --frame-dark: #97815b;
   --frame-mid: #bdab80;
   --frame-light: #e6d8b1;
 }
 
 .gallery-frame--5 {
+  --engraving: #995f71;
   --frame-dark: #aa999d;
   --frame-mid: #dbc6ca;
   --frame-light: #f3e5e7;
 }
 
 .gallery-frame--6 {
+  --engraving: #4d786c;
   --frame-dark: #94a59e;
   --frame-mid: #c2d5cd;
   --frame-light: #e6f0e9;
@@ -194,7 +206,7 @@
   position: absolute;
   width: 29%;
   aspect-ratio: 1;
-  color: var(--frame-mid);
+  color: var(--engraving);
   filter: drop-shadow(1px 2px 1px var(--frame-dark)) drop-shadow(-1px -1px 0 var(--frame-light));
 }
 
@@ -222,16 +234,16 @@
   .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)); }
 }
 
-/* Recessed vine engraving along each rail, in the same matte paint. */
+/* Contrasting painted engravings with a subtle raised highlight. */
 .frame-engraving {
   position: absolute;
   width: 58%;
   height: 12px;
   fill: none;
-  stroke: var(--frame-dark);
-  stroke-width: 1.1;
+  stroke: var(--engraving);
+  stroke-width: 1.5;
   stroke-linecap: round;
-  opacity: 0.8;
+  opacity: 1;
   filter: drop-shadow(0 1px 0 var(--frame-light));
 }
 .frame-engraving--top { top: 4px; left: 21%; }

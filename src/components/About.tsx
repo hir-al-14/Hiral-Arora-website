@@ -47,7 +47,7 @@ function About() {
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="about-gallery" role="group" aria-label="Personal photo wall — six memories, in no particular order">
         {galleryPhotos.map((photo, index) => (
-          <figure className={`gallery-frame gallery-frame--${index + 1}${photo.label === "stripe.jpg" ? " gallery-frame--featured" : ""}`} key={photo.label}>
+          <figure className={`gallery-frame gallery-frame--${index + 1}${photo.label === "stripe.jpg" ? " gallery-frame--featured" : photo.label === "ice-skating.jpg" ? " gallery-frame--skating" : ""}`} key={photo.label}>
             <div className="frame-carving" aria-hidden="true">
               {[0, 1, 2, 3].map((corner) => <span className={`frame-corner frame-corner--${corner}`} key={corner}><FrameOrnament /></span>)}
               {["top", "right", "bottom", "left"].map((edge) => (
