@@ -1,69 +1,76 @@
-.about-layout {
+.gallery-world {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid rgba(52, 67, 82, 0.2);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(103, 148, 186, 0.045), transparent 30%),
+    radial-gradient(circle at 88% 78%, rgba(157, 153, 204, 0.035), transparent 28%),
+    #f3f6f8;
+  color: #202830;
+}
+
+.gallery-content {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.about {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.3fr)
-    minmax(240px, 0.7fr);
-
-  gap: clamp(3rem, 8vw, 8rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  scroll-margin-top: 2rem;
 }
 
-.about-copy {
-  max-width: 720px;
+.about-gallery {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
 }
 
-.about-copy p {
-  margin: 0 0 1.5rem;
+.about-copy { min-width: 0; }
 
-  color: var(--text-secondary);
-
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-
-  line-height: 1.7;
-}
-
-.about-copy strong {
-  color: var(--text);
-
-  font-weight: 650;
-}
-
-.about-side {
-  display: flex;
-  flex-direction: column;
-
-  gap: 2rem;
-}
-
-.about-side > div {
-  padding-top: 1rem;
-
-  border-top: 1px solid var(--border);
-}
-
-.about-side span {
-  color: var(--pink);
-
-  font-size: 12px;
-  font-weight: 700;
-
+.about-label {
+  margin: 0 0 1.4rem;
+  color: #647382;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
 }
 
-.about-side p {
-  margin: 0.6rem 0 0;
-
-  color: var(--text-secondary);
-
-  font-size: 15px;
-
-  line-height: 1.6;
+.about-copy h2 {
+  margin: 0 0 1.6rem;
+  color: #293747;
+  font-family: var(--font-fun);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
 }
 
-@media (max-width: 750px) {
-  .about-layout {
-    grid-template-columns: 1fr;
+.about-copy > p:not(.about-label):not(.about-footnote) {
+  margin: 0 0 1.15rem;
+  color: #536170;
+  font-size: 1rem;
+  line-height: 1.8;
+}
 
-    gap: 3rem;
-  }
+.about-footnote {
+  margin: 1.8rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid #d7dfe5;
+  color: #657080;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+
+.about-footnote span { color: #545477; }
+
+/* Basic fit fallback; the wall retains the same composition at all sizes. */
+@media (max-width: 800px) {
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .about-gallery { max-width: 560px; margin-inline: auto; }
+  .about-copy { max-width: 600px; }
 }

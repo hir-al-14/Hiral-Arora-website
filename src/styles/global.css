@@ -131,36 +131,3 @@ img {
   }
 }
 
-/* ==========================================================
-   GALLERY WORLD
-========================================================== */
-
-.gallery-world {
-  position: relative;
-
-  width: 100%;
-  min-height: 100svh;
-
-  border-top:
-    1px solid
-    rgba(47, 55, 67, 0.22);
-
-  background: #f6f3ee;
-
-  color: #20242a;
-}
-
-.gallery-content {
-  width: min(100% - 2rem, 1180px);
-
-  margin-inline: auto;
-
-  padding-block: clamp(5rem, 9vw, 8rem);
-}
-
-
-@media (max-width: 700px) {
-  .gallery-content {
-    width: min(100% - 1.5rem, 1180px);
-  }
-}

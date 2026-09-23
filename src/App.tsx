@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Rain from "./components/Rain";
+import About from "./components/About";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
       <section className="gallery-world">
         <div className="gallery-content">
-          {/* we'll build the photo wall here next */}
+          <About />
         </div>
       </section>
     </div>
