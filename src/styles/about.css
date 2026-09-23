@@ -17,7 +17,7 @@
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   align-items: center;
   gap: clamp(2rem, 4vw, 4.5rem);
   scroll-margin-top: 2rem;
@@ -26,7 +26,11 @@
 .about-gallery {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.5;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1.3rem, 3.5vw, 3.8rem);
+  padding: 1rem 0.5rem 2rem;
   container-type: inline-size;
 }
 
@@ -76,23 +80,43 @@
   .about-copy { max-width: 600px; }
 }
 
-/* Six irregular hanging positions, independent of the shuffled photo order. */
+/* Each column flows around the actual photo heights, even after shuffling. */
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  min-width: 0;
+}
+.gallery-column--1 { padding-top: 3rem; }
+.gallery-column--2 { padding-top: 0.4rem; }
+.gallery-column--3 { padding-top: 4.5rem; }
+
+/* Matte painted wood: broad molding, recessed opening, and visible side depth. */
 .gallery-frame {
   --frame-dark: #8c9eaf;
   --frame-mid: #bacddd;
   --frame-light: #e3edf5;
-  position: absolute;
+  position: relative;
   margin: 0;
-  padding: clamp(10px, 2.7cqw, 30px);
+  width: 100%;
+  padding: clamp(8px, 1.9cqw, 20px);
   border-radius: 3px;
   border: 2px solid var(--frame-dark);
-  background: linear-gradient(135deg, var(--frame-light), var(--frame-mid) 35%, var(--frame-dark) 70%, var(--frame-mid));
+  background:
+    repeating-linear-gradient(97deg, transparent 0 4px, #5e625b09 4px 5px, transparent 5px 11px),
+    var(--frame-mid);
   box-shadow:
-    inset 0 0 0 2px var(--frame-light),
+    inset 0 0 0 2px var(--frame-mid),
     inset 0 0 0 4px var(--frame-dark),
-    inset 0 0 0 5px var(--frame-mid),
-    2px 4px 5px rgba(35, 42, 50, 0.17),
-    5px 14px 22px rgba(35, 42, 50, 0.12);
+    inset 0 0 0 6px var(--frame-mid),
+    inset 2px 3px 3px 6px #ffffff35,
+    inset -2px -3px 4px 6px #333a352e,
+    1px 1px 0 var(--frame-dark),
+    2px 2px 0 var(--frame-dark),
+    3px 3px 0 var(--frame-dark),
+    4px 5px 0 var(--frame-dark),
+    5px 7px 5px #29313a30,
+    9px 19px 22px #29313a26;
   transform: perspective(900px) rotate(var(--angle));
 }
 
@@ -107,42 +131,33 @@
 
 .gallery-mat {
   width: 100%;
-  height: 100%;
-  padding: 5%;
+  padding: 0;
+  position: relative;
   background: #edf0f1;
-  box-shadow: 0 0 0 1px var(--frame-dark), inset 1px 2px 4px #353b4338;
+  box-shadow: 0 0 0 2px var(--frame-dark), 0 0 0 4px var(--frame-mid);
 }
 
-.gallery-placeholder,
 .gallery-mat img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: linear-gradient(150deg, #d9e2e7, #c8d3dc);
-  box-shadow: inset 1px 2px 4px #43515e20;
+  height: auto;
 }
 
-.gallery-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
+.gallery-mat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 2px 3px 5px #202a3545;
+  pointer-events: none;
 }
 
-.gallery-placeholder span {
-  color: #536574;
-  font-family: var(--font-mono);
-  font-size: clamp(0.5rem, 0.75vw, 0.65rem);
-  text-align: center;
-  overflow-wrap: anywhere;
-}
+.gallery-frame--1 { --angle: -2deg; }
+.gallery-frame--2 { --angle: 2deg; }
+.gallery-frame--3 { --angle: 1.5deg; }
+.gallery-frame--4 { --angle: -2.5deg; }
+.gallery-frame--5 { --angle: 2.5deg; }
+.gallery-frame--6 { --angle: -2deg; }
 
-.gallery-frame--1 { width: 27%; height: 44%; top: 2%; left: 36%; --angle: 2deg; }
-.gallery-frame--2 { width: 24%; height: 33%; top: 12%; left: 2%; --angle: -3deg; }
-.gallery-frame--3 { width: 23%; height: 31%; top: 9%; left: 75%; --angle: 3deg; }
-.gallery-frame--4 { width: 30%; height: 32%; top: 59%; left: 3%; --angle: -2deg; }
-.gallery-frame--5 { width: 24%; height: 39%; top: 58%; left: 44%; --angle: 3deg; }
-.gallery-frame--6 { width: 22%; height: 28%; top: 55%; left: 77%; --angle: -3deg; }
 
 .gallery-frame--2 {
   --frame-dark: #a9aaa9;
@@ -174,24 +189,21 @@
   --frame-light: #e6f0e9;
 }
 
-/* Beaded rails and raised acanthus-like scrolls, in painted plaster tones. */
+/* Low-contrast carved rails keep the paint finish soft rather than shiny. */
 .frame-carving {
   position: absolute;
   inset: 3px;
   pointer-events: none;
-  background:
-    radial-gradient(circle, var(--frame-light) 1px, var(--frame-dark) 1.5px, transparent 2px) top left / 7px 5px repeat-x,
-    radial-gradient(circle, var(--frame-light) 1px, var(--frame-dark) 1.5px, transparent 2px) bottom left / 7px 5px repeat-x,
-    radial-gradient(circle, var(--frame-light) 1px, var(--frame-dark) 1.5px, transparent 2px) top left / 5px 7px repeat-y,
-    radial-gradient(circle, var(--frame-light) 1px, var(--frame-dark) 1.5px, transparent 2px) top right / 5px 7px repeat-y;
+  border: 2px solid var(--frame-mid);
+  box-shadow: inset 1px 1px 1px var(--frame-light), 1px 2px 1px var(--frame-dark);
 }
 
 .frame-corner {
   position: absolute;
-  width: 35%;
+  width: 29%;
   aspect-ratio: 1;
-  color: var(--frame-light);
-  filter: drop-shadow(1px 1px 0 var(--frame-dark)) drop-shadow(-1px -1px 0 var(--frame-mid));
+  color: var(--frame-mid);
+  filter: drop-shadow(1px 2px 1px var(--frame-dark)) drop-shadow(-1px -1px 0 var(--frame-light));
 }
 
 .frame-corner--0 { top: -3px; left: -3px; }
@@ -200,9 +212,6 @@
 .frame-corner--3 { bottom: -3px; left: -3px; transform: rotate(270deg); }
 .frame-ornament { display: block; width: 100%; height: 100%; }
 
-.gallery-frame--3 .gallery-placeholder { background: #d5dce2; }
-.gallery-frame--4 .gallery-placeholder { background: #d4d8e2; }
-.gallery-frame--6 .gallery-placeholder { background: #dce3e5; }
 
 .gallery-frame {
   transition: transform 320ms ease, box-shadow 320ms ease;
@@ -212,22 +221,11 @@
   .gallery-frame:hover {
     z-index: 1;
     transform: perspective(900px) translateY(-5px) rotate(calc(var(--angle) * 0.35)) rotateX(1deg);
-    box-shadow:
-      inset 0 0 0 2px var(--frame-light),
-      inset 0 0 0 4px var(--frame-dark),
-      inset 0 0 0 5px var(--frame-mid),
-      2px 6px 7px rgba(35, 42, 50, 0.18),
-      6px 20px 28px rgba(35, 42, 50, 0.15);
+
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .gallery-frame { transition: none; }
   .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)); }
-}
-
-/* Keep everyone in group photos visible, regardless of the shuffled frame. */
-.gallery-mat img {
-  object-fit: contain;
-  background: #e4e9ed;
 }

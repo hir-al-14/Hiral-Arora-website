@@ -39,8 +39,10 @@ function About() {
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="about-gallery" role="group" aria-label="Personal photo wall — six memories, in no particular order">
-        {galleryPhotos.map((photo, index) => (
-          <figure className={`gallery-frame gallery-frame--${index + 1}`} key={photo.label}>
+        {[0, 1, 2].map((column) => (
+          <div className={`gallery-column gallery-column--${column + 1}`} key={column}>
+          {galleryPhotos.slice(column * 2, column * 2 + 2).map((photo, row) => (
+          <figure className={`gallery-frame gallery-frame--${column * 2 + row + 1}`} key={photo.label}>
             <div className="frame-carving" aria-hidden="true">
               {[0, 1, 2, 3].map((corner) => <span className={`frame-corner frame-corner--${corner}`} key={corner}><FrameOrnament /></span>)}
             </div>
@@ -54,6 +56,8 @@ function About() {
               )}
             </div>
           </figure>
+          ))}
+          </div>
         ))}
       </div>
       <div className="about-copy">
