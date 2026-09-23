@@ -225,3 +225,9 @@
   .gallery-frame { transition: none; }
   .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)); }
 }
+
+/* Keep everyone in group photos visible, regardless of the shuffled frame. */
+.gallery-mat img {
+  object-fit: contain;
+  background: #e4e9ed;
+}

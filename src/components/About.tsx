@@ -3,12 +3,12 @@ import { useState } from "react";
 // Add files under public/images/gallery and set src + descriptive alt text here.
 type GalleryPhoto = { label: string; src?: string; alt: string };
 const photos: GalleryPhoto[] = [
-  { label: "memory_01.jpg", alt: "" },
-  { label: "somewhere_fun.jpg", alt: "" },
-  { label: "little_details.jpg", alt: "" },
-  { label: "project_02.jpg", alt: "" },
-  { label: "out_and_about.jpg", alt: "" },
-  { label: "an_afternoon.jpg", alt: "" },
+  { label: "AIC BP.JPG", src: "/images/gallery/AIC%20BP.JPG", alt: "Group presenting a diabetes prediction model" },
+  { label: "AIC.JPG", src: "/images/gallery/AIC.JPG", alt: "Four friends posing together in a classroom" },
+  { label: "codelab_nova.JPG", src: "/images/gallery/codelab_nova.JPG", alt: "CodeLab group photo in front of gold balloons" },
+  { label: "visa stripe.JPG", src: "/images/gallery/visa%20stripe.JPG", alt: "Group selfie beside the Visa booth at a conference" },
+  { label: "ice-skating.jpg", src: "/images/gallery/ice-skating.jpg", alt: "Making a heart with my hands at an indoor ice rink" },
+  { label: "stripe.jpg", src: "/images/gallery/stripe.jpg", alt: "Standing beneath the Stripe sign at a conference" },
 ];
 
 function shuffledPhotos() {
@@ -61,7 +61,7 @@ function About() {
         <h2 id="about-heading">a little curiosity,<br />a lot of side quests.</h2>
         <p>I'm a CS + EE student at UC Davis. Most of my favorite projects start with something small that I can't quite leave alone. A question turns into an experiment, and suddenly I've spent the evening making it work.</p>
         <p>I like teaching software to make sense of things — an image, a question, a recommendation that actually fits. Sometimes that means writing code. Sometimes it means a sensor, a breadboard, and a desk full of wires.</p>
-        <p>Away from my laptop, I'm usually out inline skating, taking photos of things I almost walked past, or finding somewhere to get coffee. A few bits of that life will live on this wall.</p>
+        <p>Away from my laptop, I'm usually out inline skating, taking photos of things I almost walked past, or finding somewhere to get coffee. A few bits of that life live on this wall.</p>
         <p className="about-footnote"><span>currently:</span> resisting the urge to start another side project</p>
       </div>
     </section>
