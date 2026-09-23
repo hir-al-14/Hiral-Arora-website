@@ -1,56 +1,75 @@
 import type { Project } from "./ProjectCard";
 
-// Descriptions use the available READMEs, résumé, previous portfolio, and supplied Devpost copy.
 export const projects: Project[] = [
   {
     title: "Scope",
-    description: "A real-time photography coach that uses composition, saliency, and object detection to help you frame stronger photos.",
+    description:
+      "A real-time photography coach that reads a camera frame using composition, saliency, and YOLO object detection.\nHelps you find a stronger crop while you're taking the photo.",
     stack: ["OpenCV", "YOLO", "FastAPI", "React Native"],
-    github: "https://github.com/AICollectiveDavis/photography-scene-finder",
+    github:
+      "https://github.com/AICollectiveDavis/photography-scene-finder",
   },
+
   {
     title: "Anticipate",
     demo: "https://www.youtube.com/watch?v=mlmwJxAM94k",
-    description: "An offline-capable app for farmers to report pests, identify species with Gemini, and alert nearby fields using wind, irrigation, and crop-adjacency risk. HackDavis 2026 finalist.",
+    description:
+      "A pest early-warning app that identifies reported species with Gemini, then uses wind, irrigation, crop, and location data to estimate which nearby farms could be at risk.\nHackDavis 2026 finalist.",
     stack: ["React Native", "Python", "Gemini", "Supabase"],
     github: "https://github.com/sathvikparasa/hackdavis26",
   },
+
   {
     title: "NomNom",
-    demo: "https://drive.google.com/file/d/1yaOvkMenW4OiAsAqx_L459V4DX5AzPM9/view?usp=sharing",
-    description: "A food-discovery app for exploring menus around dietary needs. Share restrictions with a Food-note QR card, compare ingredients, and chat with restaurants.",
+    demo:
+      "https://drive.google.com/file/d/1yaOvkMenW4OiAsAqx_L459V4DX5AzPM9/view?usp=sharing",
+    description:
+      "A food-discovery app built around dietary restrictions, especially for post-surgical patients navigating what they can safely eat.\nBecause recovering shouldn't mean missing out on good food with the people you love :)",
     stack: ["Expo", "React Native", "TypeScript", "Supabase"],
     github: "https://github.com/hir-al-14/NomNom",
   },
+
   {
     title: "Skill Scalar",
-    description: "Matches résumés with job listings and recommends courses to bridge skill gaps. Led a team of five; won Best Technical Project at the GDSC UC Davis showcase.",
+    description:
+      "Compares skills from your résumé against job listings, finds what's missing, and turns those gaps into course recommendations.\nLed a team of five members.\nWon Best Technical Project at the GDSC UC Davis showcase.",
     stack: ["FastAPI", "React", "BeautifulSoup", "LangChain"],
-    github: "https://github.com/GDSC-UCD-Cohort-24-25/team-vertex",
+    github:
+      "https://github.com/GDSC-UCD-Cohort-24-25/team-vertex",
   },
+
   {
     title: "Portfolio Website",
-    description: "My personal corner of the web: a rainy introduction, a framed photo wall, and a cassette player for exploring my work history.",
+    description:
+      "This website! Built from scratch with React and TypeScript and includes all the things I love: \nRain, photo memories, a Walkman, coffee,and probably too much time spent on tiny details :)",
     stack: ["React", "TypeScript", "Vite", "CSS"],
-    github: "https://github.com/hir-al-14/Hiral-Arora-website",
+    github:
+      "https://github.com/hir-al-14/Hiral-Arora-website",
   },
+
   {
     title: "Self-Defense Learning System",
     status: "In progress",
-    description: "A real-time training tool using pose detection to match movements and provide live feedback and correction guidance.",
+    description:
+      "A real-time movement coach that tracks body landmarks with MediaPipe and compares your pose against a reference movement.\nUses those differences to give live correction feedback.",
     stack: ["Python", "MediaPipe", "OpenCV", "FastAPI"],
-    github: "https://github.com/hir-al-14/Computer-Vision-Projects",
+    github:
+      "https://github.com/hir-al-14/Computer-Vision-Projects",
   },
+
   {
     title: "SerenAI",
     demo: "https://www.youtube.com/watch?v=WBizWO22fTk",
-    description: "A mental-health chatbot prototype with emotion tagging and personalized recommendations, paired with a therapist dashboard for reviewing emotional trends and risk flags.",
+    description:
+      "A chatbot prototype that tags emotion across conversations and turns those signals into longer-term trends.\nIncludes a separate dashboard for reviewing emotional patterns and risk flags.",
     stack: ["React", "FastAPI", "Gemini", "Hugging Face"],
     github: "https://github.com/hir-al-14/SereneAI",
   },
+
   {
     title: "NAMI Yolo Portal",
-    description: "A volunteer-management prototype for NAMI Yolo County, with event scheduling, availability, and application tracking. Built at HackDavis 2025; I contributed to the frontend and Figma design.",
+    description:
+      "A volunteer portal for NAMI Yolo County that brings event scheduling, availability, and applications into one place.\nHackDavis 2025.",
     stack: ["React", "Firebase", "Figma"],
     github: "https://github.com/aalcar/hackdavis-25",
     website: "https://namiyolo.org/",

@@ -1,68 +1,229 @@
 .projects {
   padding-block: clamp(3rem, 5vw, 5rem);
   min-height: var(--section-height);
+
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
+
   scroll-margin-top: 2rem;
 }
-.projects-inner { min-width: 0; width: min(100% - 3rem, 1400px); margin-inline: auto; }
-.projects h2 { font: 500 clamp(1.9rem, 2.8vw, 2.5rem)/1.2 var(--font-main); margin: 0; color: #293b50; }
-.projects-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
-.projects-controls { display: flex; gap: 0.75rem; }
+
+.projects-inner {
+  min-width: 0;
+  width: min(100% - 3rem, 1400px);
+  margin-inline: auto;
+}
+
+.projects h2 {
+  font: 500 clamp(1.9rem, 2.8vw, 2.5rem) / 1.2 var(--font-main);
+  margin: 0;
+  color: #293b50;
+}
+
+.projects-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projects-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
 .projects-controls button {
   width: 42px;
   height: 38px;
+
   border: 1px solid #bdc9dd;
   border-radius: 4px;
+
   color: #425b83;
   background: transparent;
+
   cursor: pointer;
   font-size: 22px;
 }
-.projects-controls button:hover { background: #e3e9f5; }
+
+.projects-controls button:hover {
+  background: #e3e9f5;
+}
+
 .project-list {
   display: flex;
   gap: 20px;
+
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+
   padding: 4px 4px 1.5rem;
+
   scrollbar-width: thin;
   scrollbar-color: #aebbd3 transparent;
 }
-.project-list:focus-visible, .projects-controls button:focus-visible { outline: 2px solid #527ca4; outline-offset: 4px; }
+
+.project-list:focus-visible,
+.projects-controls button:focus-visible {
+  outline: 2px solid #527ca4;
+  outline-offset: 4px;
+}
+
 .project-card {
   --card-bg: #e8eef8;
   --card-border: #c5d2e8;
   --card-ink: #405a86;
+
   flex: 0 0 min(420px, 86vw);
   scroll-snap-align: start;
+
   display: flex;
+
   border: 1px solid var(--card-border);
   border-radius: 5px;
+
   overflow: hidden;
   background: var(--card-bg);
 }
-.project-card:nth-child(even) { --card-bg: #eeebf6; --card-border: #d2c9e5; --card-ink: #65527f; }
-.project-card-body { padding: 1.8rem; min-height: 320px; display: flex; flex-direction: column; width: 100%; }
-.project-image { width: 100%; max-height: 240px; object-fit: contain; }
-.project-card-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
-.project-card h3 { font: 500 1.5rem/1.2 var(--font-main); margin: 0; color: #303c54; }
-.project-card p { font-size: 0.95rem; line-height: 1.75; color: #526078; margin: 1.2rem 0 1.5rem; }
-.project-github { display: inline-flex; flex-shrink: 0; color: var(--card-ink); padding: 3px; border-radius: 3px; }
-.project-github--placeholder { opacity: 0.6; }
-a.project-github:hover { color: #263451; }
-a.project-github:focus-visible, .project-demo:focus-visible, .project-website:focus-visible { outline: 2px solid var(--card-ink); outline-offset: 4px; }
+
+.project-description {
+  white-space: pre-line;
+}
+
+.project-description strong {
+  font-weight: 600;
+  color: #3f4f69;
+}
+
+.project-card:nth-child(even) {
+  --card-bg: #eeebf6;
+  --card-border: #d2c9e5;
+  --card-ink: #65527f;
+}
+
+.project-card-body {
+  padding: 1.8rem;
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.project-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.project-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.project-card h3 {
+  font: 500 1.5rem / 1.2 var(--font-main);
+  margin: 0;
+  color: #303c54;
+}
+
+/* Description */
+
+.project-card p,
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+
+  color: #526078;
+
+  margin: 1.2rem 0 1.5rem;
+}
+
+/*
+  Makes \n inside projectsData.ts render
+  as an actual new line.
+*/
+.project-description {
+  white-space: pre-line;
+}
+
+/* HackDavis 2025 / 2026 */
+.project-description strong {
+  font-weight: 600;
+  color: #3f4f69;
+}
+
+.project-github {
+  display: inline-flex;
+  flex-shrink: 0;
+
+  color: var(--card-ink);
+
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.project-github--placeholder {
+  opacity: 0.6;
+}
+
+a.project-github:hover {
+  color: #263451;
+}
+
+a.project-github:focus-visible,
+.project-demo:focus-visible,
+.project-website:focus-visible {
+  outline: 2px solid var(--card-ink);
+  outline-offset: 4px;
+}
+
 .project-stack {
   display: flex;
   flex-wrap: wrap;
+
   gap: 0.35rem 0.75rem;
+
   list-style: none;
+
   padding: 1rem 0 0;
   border-top: 1px solid var(--card-border);
+
   margin: auto 0 0;
 }
-.project-stack li { font: 11px/1.6 var(--font-mono); color: var(--card-ink); }
-.project-status { align-self: flex-start; font: 11px var(--font-mono); color: var(--card-ink); margin-top: 0.7rem; }
-.project-demo, .project-website { align-self: flex-start; color: var(--card-ink); font-size: 13px; text-underline-offset: 4px; margin-bottom: 1.5rem; }
-.project-demo:hover, .project-website:hover { text-decoration-thickness: 2px; }
+
+.project-stack li {
+  font: 11px / 1.6 var(--font-mono);
+  color: var(--card-ink);
+}
+
+.project-status {
+  align-self: flex-start;
+
+  font: 11px var(--font-mono);
+  color: var(--card-ink);
+
+  margin-top: 0.7rem;
+}
+
+.project-demo,
+.project-website {
+  align-self: flex-start;
+
+  color: var(--card-ink);
+  font-size: 13px;
+
+  text-underline-offset: 4px;
+
+  margin-bottom: 1.5rem;
+}
+
+.project-demo:hover,
+.project-website:hover {
+  text-decoration-thickness: 2px;
+}

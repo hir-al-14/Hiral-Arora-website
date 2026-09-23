@@ -39,11 +39,40 @@ function About() {
         ))}
       </div>
       <div className="about-copy">
-        <h2 id="about-heading">About me</h2>
-        <p>I'm a CS + EE student at UC Davis. Most of my favorite projects start with something small that I can't quite leave alone. A question turns into an experiment, and suddenly I've spent the evening making it work.</p>
-        <p>I like teaching software to make sense of things — an image, a question, a recommendation that actually fits. Sometimes that means writing code. Sometimes it means a sensor, a breadboard, and a desk full of wires.</p>
-        <p>Away from my laptop, I'm usually out inline skating, taking photos of things I almost walked past, or finding somewhere to get coffee. A few bits of that life live on this wall.</p>
-        <p className="about-footnote"><span>currently:</span> resisting the urge to start another side project</p>
+        <h2 id="about-heading">About Me</h2>
+
+        <p>
+          Before i knew what coding was, i was fascinated by all the colorful 
+          lines of code on a screen and wondered what they actually did.
+        </p>
+
+        <p>
+          i came into college wanting to try pretty much everything. that's
+          taken me through LLMs, computer vision, recommendation systems,
+          hardware, and lots of experimenting. 
+          especially right now, when tech seems to change every few months, 
+          i think exploring new things is what keeps tech exciting for me.
+        </p>
+
+        <p>
+          lately, i've been really curious about security and identity. i'm
+          building a temporal graph model that learns how users, devices,
+          sessions, and IPs connect over time, looking for attacks that might
+          seem completely normal on their own. i'm also experimenting with
+          self-supervised learning to catch patterns it hasn't seen before.
+        </p>
+
+        <p>
+          i also really love meeting new people, hearing about what they've
+          worked on, and learning from their experiences. some of my favorite
+          memories are just staying up way too late with friends, building
+          something together and figuring things out as we go.
+        </p>
+
+        <p>
+          when i'm away from my laptop, i love skating (not amazingly, but
+          we'll get there), i'm obsessed with dogs, and i will never say no to coffee :)
+        </p>
       </div>
     </section>
   );

@@ -31,6 +31,7 @@
 .experience-panel ul { padding-left: 1.2rem; margin: 1.7rem 0 0; }
 .experience-panel li { padding-left: 0.5rem; margin-bottom: 1rem; font-size: 1rem; line-height: 1.75; color: #53657a; }
 .experience-panel li::marker { content: '▹ '; color: #6388ad; }
+
 @media (max-width: 1050px) {
   .experience-layout { grid-template-columns: minmax(0, 1fr); }
   .experience-panel { min-height: 0; }

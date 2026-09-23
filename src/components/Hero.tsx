@@ -2,25 +2,31 @@ function Hero() {
   return (
     <div className="hero">
       <div className="hero-copy">
+
         <p className="hero-status">
           <span />
-          probably building something
+          localhost: running on iced coffee & a new side project ☁️
         </p>
 
         <h1 className="hero-greeting">
-          heyy, i'm Hiral!
+          heyy, I'm Hiral!
         </h1>
 
         <p className="hero-intro">
-          CS + EE student who builds software —
+          Computer Science + Electrical Engineering student @ UC Davis.
           <br />
-          usually after thinking{" "}
-          <span>“wait... can i make that?”</span>
+          i'm into building software, experimenting with ML models
+          <br />
+          Sometimes, i mess around with wires and sensors on hardware projects!
+        </p>
+
+        <p className="hero-thought">
+          i love seeing something cool and thinking{" "}
+          <span>“wait... i shd make that?”</span>
         </p>
 
         <p className="hero-note">
-          currently running on curiosity, coffee, and{" "}
-          <code>npm run dev</code>
+          currently running on curiosity & caffeine
         </p>
 
         <div className="hero-links">
@@ -62,6 +68,7 @@ function Hero() {
 
       <div className="hero-visual">
         <div className="portrait-wrap">
+
           <div className="bubble-border">
             <div className="bubble-border-inner">
               <img
@@ -73,9 +80,10 @@ function Hero() {
           </div>
 
           <div className="photo-meta">
-            <span>HIRAL-ARORA</span>
-            <span>DAVIS, CA</span>
+            <span>SOFTWARE ENGINEER (aspiring lol)</span>
+            <span>Davis, CA</span>
           </div>
+
         </div>
       </div>
     </div>
