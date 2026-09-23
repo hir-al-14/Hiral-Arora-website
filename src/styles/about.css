@@ -1,4 +1,5 @@
-.gallery-world {
+.gallery-world,
+.projects {
   position: relative;
   width: 100%;
   border-top: 1px solid rgba(52, 67, 82, 0.2);

@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Rain from "./components/Rain";
 import About from "./components/About";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </section>
 
       <Experience />
+      <Projects />
     </div>
   );
 }
