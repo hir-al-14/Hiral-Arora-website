@@ -33,28 +33,6 @@ body {
 }
 
 
-/* DARK THEME */
-
-[data-theme="dark"] {
-  --bg: #111b27;
-  --surface: #182536;
-
-  --text: #f2f6fa;
-  --text-secondary: #aab8c6;
-
-  --border: #2b3d50;
-
-  --blue: #79aee3;
-  --blue-bright: #9bc8f2;
-
-  --sky: #77b5e8;
-  --lavender: #aaa7e8;
-  --pink: #dfa6c1;
-
-  --rain: rgba(155, 200, 242, 0.16);
-}
-
-
 /* RESET */
 
 * {

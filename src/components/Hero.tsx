@@ -4,7 +4,7 @@ function Hero() {
       <div className="hero-content">
         <p className="hero-status">
           <span />
-          currently building
+          probably tinkering with some code 
         </p>
 
         <h1>
@@ -16,9 +16,9 @@ function Hero() {
         </h1>
 
         <p className="hero-description">
-          CS + EE @ UC Davis, exploring the space between
-          software engineering, machine learning, and things
-          I probably decided to build at 2am.
+          Computer Science + Electrical Engineering @ UC Davis
+          I like building software, experimenting with machine learning, 
+          and sometimes connecting way too many wires to an Arduino.
         </p>
 
         <div className="hero-links">
@@ -39,7 +39,7 @@ function Hero() {
           </a>
 
           <a href="#projects">
-            projects ↓
+            stuff i've built ↓
           </a>
         </div>
       </div>
