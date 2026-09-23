@@ -1,18 +1,19 @@
-const drops = Array.from({ length: 30 });
+const drops = Array.from({ length: 42 });
 
 function Rain() {
   return (
-    <div className="rain" aria-hidden="true">
+    <div className="intro-rain" aria-hidden="true">
       {drops.map((_, index) => (
         <span
-          className="rain-drop"
+          className="intro-rain-drop"
           key={index}
           style={{
-            left: `${(index * 37) % 100}%`,
-            animationDelay:
-              `${(index % 10) * -0.4}s`,
-            animationDuration:
-              `${2.8 + (index % 5) * 0.25}s`,
+            left: `${(index * 37) % 103}%`,
+            animationDelay: `${(index % 13) * -0.43}s`,
+            animationDuration: `${
+              3.1 + (index % 7) * 0.28
+            }s`,
+            opacity: 0.16 + (index % 5) * 0.035,
           }}
         />
       ))}

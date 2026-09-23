@@ -1,57 +1,51 @@
-.rain {
-  position: fixed;
+.intro-rain {
+  position: absolute;
   inset: 0;
 
-  z-index: 0;
+  z-index: 1;
 
   overflow: hidden;
 
   pointer-events: none;
 }
 
-.rain-drop {
+.intro-rain-drop {
   position: absolute;
 
-  top: -80px;
+  top: -90px;
 
   width: 1px;
-  height: clamp(40px, 6vw, 65px);
+  height: clamp(45px, 6vw, 70px);
 
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--rain)
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(169, 203, 237, 0.5)
+    );
 
-  animation-name: rainfall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation:
+    intro-rainfall linear infinite;
+
+  will-change: transform;
 }
 
-
-/* RAIN ANIMATION */
-
-@keyframes rainfall {
+@keyframes intro-rainfall {
   from {
     transform:
-      translateY(-20vh)
-      translateX(0)
+      translate3d(0, -15vh, 0)
       rotate(8deg);
   }
 
   to {
     transform:
-      translateY(130vh)
-      translateX(-70px)
+      translate3d(-75px, 125vh, 0)
       rotate(8deg);
   }
 }
 
-
-/* Respect accessibility settings */
-
 @media (prefers-reduced-motion: reduce) {
-  .rain-drop {
+  .intro-rain-drop {
     display: none;
   }
 }
