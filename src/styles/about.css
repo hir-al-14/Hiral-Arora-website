@@ -10,9 +10,9 @@
 }
 
 .gallery-content {
-  width: calc(100% - clamp(2rem, 5vw, 6rem));
+  width: min(100% - clamp(2rem, 5vw, 6rem), 1600px);
   margin-inline: auto;
-  padding-block: clamp(4rem, 7vw, 7rem);
+  padding-block: clamp(3.5rem, 5vw, 5rem);
 }
 
 .about {
@@ -26,11 +26,11 @@
 .about-gallery {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.35;
+  aspect-ratio: 1.5;
   container-type: inline-size;
 }
 
-.about-copy { min-width: 0; max-width:   thirty; }
+.about-copy { min-width: 0; max-width: 34rem; }
 
 .about-label {
   margin: 0 0 1.4rem;
@@ -44,7 +44,7 @@
   margin: 0 0 1.6rem;
   color: #293747;
   font-family: var(--font-fun);
-  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-size: clamp(1.9rem, 2.5vw, 2.5rem);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.025em;
@@ -54,7 +54,7 @@
   margin: 0 0 1.15rem;
   color: #536170;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .about-footnote {
@@ -64,7 +64,7 @@
   color: #657080;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .about-footnote span { color: #545477; }

@@ -5,7 +5,7 @@
 .hero {
   position: relative;
 
-  min-height: clamp(560px, 68svh, 680px);
+  min-height: clamp(620px, 76svh, 760px);
 
   display: grid;
 
