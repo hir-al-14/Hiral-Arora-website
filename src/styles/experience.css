@@ -2,11 +2,11 @@
   background: #e7eef5;
   color: #293b50;
   border-top: 1px solid #cedbe7;
-  padding: clamp(4rem, 7vw, 7rem) 0;
+  padding: clamp(2.5rem, 4vw, 3.5rem) 0;
   scroll-margin-top: 2rem;
 }
 .experience-inner { width: min(100% - 3rem, 1400px); margin-inline: auto; }
-.experience-heading { margin-bottom: 3.5rem; }
+.experience-heading { margin-bottom: 2.5rem; }
 .experience-heading > p, .experience-playing {
   font: 0.75rem var(--font-mono);
   color: #62778d;
@@ -73,4 +73,12 @@
   .experience-tabs button { font-size: 12px; padding-inline: 7px; gap: 5px; }
   .track-number { display: none; }
   .experience-inner { width: calc(100% - 2rem); }
+}
+
+@media (min-width: 1051px) {
+  .experience {
+    min-height: var(--section-height);
+    display: grid;
+    align-items: center;
+  }
 }

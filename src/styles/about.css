@@ -12,12 +12,12 @@
 .gallery-content {
   width: min(100% - clamp(2rem, 5vw, 6rem), 1600px);
   margin-inline: auto;
-  padding-block: clamp(3.5rem, 5vw, 5rem);
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
   align-items: center;
   gap: clamp(2rem, 4vw, 4.5rem);
   scroll-margin-top: 2rem;
@@ -26,7 +26,9 @@
 .about-gallery {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.05;
+  max-width: 640px;
+  margin-inline: auto;
+  aspect-ratio: 1.12;
   container-type: inline-size;
 }
 
@@ -138,7 +140,7 @@
 }
 
 /* The centerpiece and portrait stay anchored; the four landscape photos shuffle. */
-.gallery-frame--1 { width: 32%; top: 29%; left: 35%; --angle: 1deg; }
+.gallery-frame--1 { width: 28%; top: 30%; left: 37%; --angle: 1deg; }
 .gallery-frame--2 { width: 27%; top: 6%; left: 1%; --angle: -4deg; }
 .gallery-frame--3 { width: 25%; top: 0%; left: 37%; --angle: 2deg; }
 .gallery-frame--4 { width: 24%; top: 48%; left: 3%; --angle: -3deg; }
@@ -250,3 +252,11 @@
 .frame-engraving--bottom { bottom: 4px; left: 21%; transform: rotate(180deg); }
 .frame-engraving--left { left: 3px; top: 21%; width: 12px; height: 58%; }
 .frame-engraving--right { right: 3px; top: 21%; width: 12px; height: 58%; }
+
+@media (min-width: 1051px) {
+  .gallery-world {
+    min-height: var(--section-height);
+    display: grid;
+    align-items: center;
+  }
+}

@@ -3,6 +3,8 @@
 /* COLOR SYSTEM */
 
 :root {
+  --hero-height: clamp(620px, 76svh, 760px);
+  --section-height: calc(var(--hero-height) + 84px);
   font-family: "Inter", sans-serif;
 
   --font-main: "Inter", sans-serif;
