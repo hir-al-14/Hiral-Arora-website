@@ -8,7 +8,7 @@ function Hero() {
         </p>
 
         <h1>
-          heyy, i'm Hiral.
+          <span className="hero-hello">heyy, i'm Hiral!</span>
           <br />
           i build software +
           <br />

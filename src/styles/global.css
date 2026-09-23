@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap");
+
 /* COLOR SYSTEM */
 
 :root {
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  font-family: "Inter", sans-serif;
+
+  --font-main: "Inter", sans-serif;
+  --font-fun: "Fredoka", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
 
   --bg: #eef3f7;
   --surface: #f8fafc;
@@ -24,6 +26,10 @@
   --pink: #cb91ad;
 
   --rain: rgba(73, 124, 172, 0.16);
+}
+
+body {
+  font-family: var(--font-main);
 }
 
 

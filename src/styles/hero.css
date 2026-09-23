@@ -17,6 +17,11 @@
   min-width: 0;
 }
 
+.hero-hello {
+  font-family: var(--font-fun);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
 
 /* STATUS */
 
