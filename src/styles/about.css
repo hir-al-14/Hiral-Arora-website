@@ -34,25 +34,13 @@
 
 .about-copy { min-width: 0; max-width: 34rem; }
 
-.about-label {
-  margin: 0 0 1.4rem;
-  color: #647382;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-}
-
 .about-copy h2 {
   margin: 0 0 1.6rem;
   color: #293747;
-  font-family: var(--font-fun);
-  font-size: clamp(1.9rem, 2.5vw, 2.5rem);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 var(--font-fun);
 }
 
-.about-copy > p:not(.about-label):not(.about-footnote) {
+.about-copy > p:not(.about-footnote) {
   margin: 0 0 1.15rem;
   color: #536170;
   font-size: 1rem;
@@ -105,7 +93,7 @@
     4px 5px 0 var(--frame-dark),
     5px 7px 5px #29313a30,
     9px 19px 22px #29313a26;
-  transform: perspective(900px) rotate(var(--angle));
+  transform: perspective(900px) rotate(var(--angle)) scale(1.1);
 }
 
 .gallery-frame::after {
@@ -226,14 +214,14 @@
 @media (hover: hover) and (pointer: fine) {
   .gallery-frame:hover {
     z-index: 1;
-    transform: perspective(900px) translateY(-5px) rotate(calc(var(--angle) * 0.35)) rotateX(1deg);
+    transform: perspective(900px) translateY(-5px) rotate(calc(var(--angle) * 0.35)) rotateX(1deg) scale(1.1);
 
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .gallery-frame { transition: none; }
-  .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)); }
+  .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)) scale(1.1); }
 }
 
 /* Contrasting painted engravings with a subtle raised highlight. */

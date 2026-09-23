@@ -51,7 +51,6 @@ export default function Experience() {
     <section className="experience" id="experience" aria-labelledby="experience-heading">
       <div className="experience-inner">
         <header className="experience-heading">
-          <p>02 / experience</p>
           <h2 id="experience-heading">Experiences</h2>
         </header>
         <div className="experience-layout">
@@ -72,7 +71,6 @@ export default function Experience() {
             <p className="player-caption">I LOVE WALKMANS</p>
           </div>
           <div className="experience-panel" id="experience-panel" role="tabpanel" aria-labelledby={`experience-tab-${active}`} tabIndex={0}>
-            <p className="experience-playing">TRACK 0{active + 1}</p>
             <h3>{experience.role} <span>@ {experience.organization ?? experience.company}</span></h3>
             <p className="experience-date">{experience.date} <span>· {experience.location}</span></p>
             {experience.project && <p className="experience-project">{experience.project}</p>}

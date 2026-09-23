@@ -7,11 +7,6 @@
 }
 .experience-inner { width: min(100% - 3rem, 1400px); margin-inline: auto; }
 .experience-heading { margin-bottom: 2.5rem; }
-.experience-heading > p, .experience-playing {
-  font: 0.75rem var(--font-mono);
-  color: #62778d;
-  letter-spacing: 0.06em;
-}
 .experience-heading h2 { font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 var(--font-fun); margin: 1rem 0 0.7rem; }
 .experience-heading > span { color: #65768a; font-size: 0.95rem; }
 .experience-layout { display: grid; grid-template-columns: 434px minmax(0, 1fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: start; }
@@ -28,7 +23,6 @@
 .track-number { font: 10px var(--font-mono); color: #688198; }
 .player-caption { grid-column: 1 / -1; margin-top: 2rem; font: 11px var(--font-mono); color: #697e90; }
 .experience-panel { min-height: 390px; }
-.experience-playing { margin: 0 0 1.2rem; }
 .experience-panel h3 { font: 500 clamp(1.4rem, 2.1vw, 2rem)/1.35 var(--font-fun); margin: 0; }
 .experience-panel h3 span { color: #4b7197; }
 .experience-date { font: 12px/1.8 var(--font-mono); color: #62768b; margin: 1rem 0; }
