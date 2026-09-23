@@ -26,7 +26,7 @@
 .about-gallery {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.15;
+  aspect-ratio: 1.05;
   container-type: inline-size;
 }
 
@@ -137,12 +137,12 @@
 }
 
 /* The centerpiece and portrait stay anchored; the four landscape photos shuffle. */
-.gallery-frame--1 { width: 32%; top: 16%; left: 35%; --angle: 1deg; }
-.gallery-frame--2 { width: 28%; top: 3%; left: 1%; --angle: -4deg; }
-.gallery-frame--3 { width: 27%; top: 5%; left: 73%; --angle: 3deg; }
-.gallery-frame--4 { width: 23%; top: 37%; left: 4%; --angle: -3deg; }
-.gallery-frame--5 { width: 28%; top: 78%; left: 2%; --angle: 2.5deg; }
-.gallery-frame--6 { width: 27%; top: 58%; left: 73%; --angle: -4deg; }
+.gallery-frame--1 { width: 32%; top: 29%; left: 35%; --angle: 1deg; }
+.gallery-frame--2 { width: 27%; top: 6%; left: 1%; --angle: -4deg; }
+.gallery-frame--3 { width: 25%; top: 0%; left: 37%; --angle: 2deg; }
+.gallery-frame--4 { width: 24%; top: 48%; left: 3%; --angle: -3deg; }
+.gallery-frame--5 { width: 27%; top: 9%; left: 73%; --angle: 3deg; }
+.gallery-frame--6 { width: 27%; top: 61%; left: 73%; --angle: -4deg; }
 
 .gallery-frame--featured .gallery-mat { overflow: hidden; }
 .gallery-frame--featured img {
