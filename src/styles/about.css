@@ -26,11 +26,7 @@
 .about-gallery {
   position: relative;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  gap: clamp(1.3rem, 3.5vw, 3.8rem);
-  padding: 1rem 0.5rem 2rem;
+  aspect-ratio: 1.15;
   container-type: inline-size;
 }
 
@@ -80,23 +76,12 @@
   .about-copy { max-width: 600px; }
 }
 
-/* Each column flows around the actual photo heights, even after shuffling. */
-.gallery-column {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2.5rem, 5vw, 5rem);
-  min-width: 0;
-}
-.gallery-column--1 { padding-top: 3rem; }
-.gallery-column--2 { padding-top: 0.4rem; }
-.gallery-column--3 { padding-top: 4.5rem; }
-
 /* Matte painted wood: broad molding, recessed opening, and visible side depth. */
 .gallery-frame {
   --frame-dark: #8c9eaf;
   --frame-mid: #bacddd;
   --frame-light: #e3edf5;
-  position: relative;
+  position: absolute;
   margin: 0;
   width: 100%;
   padding: clamp(8px, 1.9cqw, 20px);
@@ -151,12 +136,19 @@
   pointer-events: none;
 }
 
-.gallery-frame--1 { --angle: -2deg; }
-.gallery-frame--2 { --angle: 2deg; }
-.gallery-frame--3 { --angle: 1.5deg; }
-.gallery-frame--4 { --angle: -2.5deg; }
-.gallery-frame--5 { --angle: 2.5deg; }
-.gallery-frame--6 { --angle: -2deg; }
+/* The centerpiece and portrait stay anchored; the four landscape photos shuffle. */
+.gallery-frame--1 { width: 32%; top: 16%; left: 35%; --angle: 1deg; }
+.gallery-frame--2 { width: 28%; top: 3%; left: 1%; --angle: -4deg; }
+.gallery-frame--3 { width: 27%; top: 5%; left: 73%; --angle: 3deg; }
+.gallery-frame--4 { width: 23%; top: 37%; left: 4%; --angle: -3deg; }
+.gallery-frame--5 { width: 28%; top: 78%; left: 2%; --angle: 2.5deg; }
+.gallery-frame--6 { width: 27%; top: 58%; left: 73%; --angle: -4deg; }
+
+.gallery-frame--featured .gallery-mat { overflow: hidden; }
+.gallery-frame--featured img {
+  transform: scale(1.32);
+  transform-origin: 50% 40%;
+}
 
 
 .gallery-frame--2 {
@@ -229,3 +221,20 @@
   .gallery-frame { transition: none; }
   .gallery-frame:hover { transform: perspective(900px) rotate(var(--angle)); }
 }
+
+/* Recessed vine engraving along each rail, in the same matte paint. */
+.frame-engraving {
+  position: absolute;
+  width: 58%;
+  height: 12px;
+  fill: none;
+  stroke: var(--frame-dark);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  opacity: 0.8;
+  filter: drop-shadow(0 1px 0 var(--frame-light));
+}
+.frame-engraving--top { top: 4px; left: 21%; }
+.frame-engraving--bottom { bottom: 4px; left: 21%; transform: rotate(180deg); }
+.frame-engraving--left { left: 3px; top: 21%; width: 12px; height: 58%; }
+.frame-engraving--right { right: 3px; top: 21%; width: 12px; height: 58%; }

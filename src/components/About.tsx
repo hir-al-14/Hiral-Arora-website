@@ -12,12 +12,19 @@ const photos: GalleryPhoto[] = [
 ];
 
 function shuffledPhotos() {
-  const order = [...photos];
+  const order = photos.filter((photo) => !["stripe.jpg", "ice-skating.jpg"].includes(photo.label));
   for (let i = order.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [order[i], order[j]] = [order[j], order[i]];
   }
-  return order;
+  return [
+    photos.find((photo) => photo.label === "stripe.jpg")!,
+    order[0],
+    order[1],
+    photos.find((photo) => photo.label === "ice-skating.jpg")!,
+    order[2],
+    order[3],
+  ];
 }
 
 // Raised scrollwork stays vector-sharp and inherits each painted frame's colors.
@@ -39,12 +46,18 @@ function About() {
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="about-gallery" role="group" aria-label="Personal photo wall — six memories, in no particular order">
-        {[0, 1, 2].map((column) => (
-          <div className={`gallery-column gallery-column--${column + 1}`} key={column}>
-          {galleryPhotos.slice(column * 2, column * 2 + 2).map((photo, row) => (
-          <figure className={`gallery-frame gallery-frame--${column * 2 + row + 1}`} key={photo.label}>
+        {galleryPhotos.map((photo, index) => (
+          <figure className={`gallery-frame gallery-frame--${index + 1}${photo.label === "stripe.jpg" ? " gallery-frame--featured" : ""}`} key={photo.label}>
             <div className="frame-carving" aria-hidden="true">
               {[0, 1, 2, 3].map((corner) => <span className={`frame-corner frame-corner--${corner}`} key={corner}><FrameOrnament /></span>)}
+              {["top", "right", "bottom", "left"].map((edge) => (
+                <svg className={`frame-engraving frame-engraving--${edge}`} viewBox={edge === "left" || edge === "right" ? "0 0 16 120" : "0 0 120 16"} key={edge}>
+                  <g transform={edge === "left" || edge === "right" ? "translate(16 0) rotate(90)" : undefined}>
+                  <path d="M2 8c9-10 17 10 26 0s17 10 26 0 17 10 26 0 17 10 26 0 10 0 12 0M8 8c3-8 9-8 12-3M31 8c3-8 9-8 12-3M55 8c3-8 9-8 12-3M79 8c3-8 9-8 12-3M101 8c3-8 9-8 12-3" />
+                  <path d="m56 8 4-5 4 5-4 5Z" />
+                  </g>
+                </svg>
+              ))}
             </div>
             <div className="gallery-mat">
               {photo.src ? (
@@ -56,8 +69,6 @@ function About() {
               )}
             </div>
           </figure>
-          ))}
-          </div>
         ))}
       </div>
       <div className="about-copy">
