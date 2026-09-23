@@ -122,7 +122,6 @@ export default function Hardware() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Board: Jstrom99 / Efa
               </a>
 
               {" · "}
@@ -132,12 +131,9 @@ export default function Hardware() {
                 target="_blank"
                 rel="noreferrer"
               >
-                CC BY-SA 4.0
               </a>
 
               <br />
-
-              Background removed · rotated
             </figcaption>
           </figure>
         </div>
