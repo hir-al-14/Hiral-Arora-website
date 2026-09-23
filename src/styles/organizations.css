@@ -9,7 +9,7 @@
 .organization-logo img { width: 54px; height: 54px; object-fit: contain; }
 .organization-logo.codelab { background: #242132; }
 .organization-logo.codelab img { width: 34px; height: 44px; }
-.organization-logo.aic { background: #101a30; }
+.organization-logo.aic { background: #fff; }
 .organization-logo.include { background: #76629a; }
 .organization-logo.include img { width: 40px; height: 40px; }
 .organization-name { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; }
