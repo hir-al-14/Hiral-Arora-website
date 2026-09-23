@@ -1,4 +1,5 @@
 import { useState, type KeyboardEvent } from "react";
+import Walkman from "./Walkman";
 
 const experiences = [
   {
@@ -51,22 +52,11 @@ export default function Experience() {
       <div className="experience-inner">
         <header className="experience-heading">
           <p>02 / experience</p>
-          <h2 id="experience-heading">a few tracks so far.</h2>
-          <span>different teams, plenty to learn. pick a track.</span>
+          <h2 id="experience-heading">Experiences</h2>
         </header>
         <div className="experience-layout">
           <div className="experience-selector">
-            <div className="tape-player" aria-hidden="true">
-              <div className="player-brand">HIRAL <span>stereo</span></div>
-              <div className="cassette">
-                <div className="cassette-label">SIDE A · TRACK 0{active + 1}</div>
-                <div className="tape-reels"><i /><span /><i /></div>
-                <div className="cassette-name">{experience.company}</div>
-              </div>
-              <div className="player-speaker" />
-              <div className="player-controls"><span>◀◀</span><span className="player-play">▶</span><span>■</span></div>
-              <span className="player-jack" />
-            </div>
+            <Walkman track={active + 1} label={experience.company} />
             <svg className="experience-wire" viewBox="0 0 64 288" preserveAspectRatio="none" aria-hidden="true">
               <path className="wire-shadow" d={`M 0 170 C 58 170, 6 ${active * 72 + 36}, 64 ${active * 72 + 36}`} />
               <path d={`M 0 170 C 58 170, 6 ${active * 72 + 36}, 64 ${active * 72 + 36}`} />
@@ -79,10 +69,10 @@ export default function Experience() {
                 </button>
               ))}
             </div>
-            <p className="player-caption">a little work history, on tape.</p>
+            <p className="player-caption">I LOVE WALKMANS</p>
           </div>
           <div className="experience-panel" id="experience-panel" role="tabpanel" aria-labelledby={`experience-tab-${active}`} tabIndex={0}>
-            <p className="experience-playing">TRACK 0{active + 1} / 04</p>
+            <p className="experience-playing">TRACK 0{active + 1}</p>
             <h3>{experience.role} <span>@ {experience.organization ?? experience.company}</span></h3>
             <p className="experience-date">{experience.date} <span>· {experience.location}</span></p>
             {experience.project && <p className="experience-project">{experience.project}</p>}
