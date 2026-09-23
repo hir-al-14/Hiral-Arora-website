@@ -10,7 +10,6 @@ export default function Organizations() {
     <section className="organizations" id="organizations" aria-labelledby="organizations-heading">
       <div className="organizations-inner">
         <h2 id="organizations-heading">Clubs &amp; organizations</h2>
-        <p className="organizations-intro">Good people. Shared ideas. Things we build together.</p>
         <div className="organizations-grid">
           {organizations.map(org => (
             <a className="organization" href={org.url} target="_blank" rel="noreferrer" key={org.name}>

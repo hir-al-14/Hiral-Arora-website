@@ -21,7 +21,7 @@ export default function Hardware() {
   return (
     <section className="hardware" id="hardware" aria-labelledby="hardware-heading">
       <div className="hardware-inner">
-        <div className="hardware-heading"><h2 id="hardware-heading">Hardware</h2><span>Code, circuits &amp; things I can hold.</span></div>
+        <div className="hardware-heading"><h2 id="hardware-heading">Hardware</h2></div>
         <div className="hardware-workbench">
           <svg className="hardware-cables" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
             <path className="hardware-cable-shadow" d="M515 220C460 220 495 340 432 340S405 185 350 185M685 155C750 155 690 65 760 65S790 210 850 210" />
@@ -42,9 +42,8 @@ export default function Hardware() {
           ))}
           <figure className="hardware-board">
             <div className="hardware-board-case">
-              <span className="hardware-board-brand">RASPBERRY PI <small>04 / B</small></span>
+              <span className="hardware-board-brand">RASPBERRY PI </span>
               <div className="hardware-board-window"><img src={raspberryPi} alt="Raspberry Pi board illustration, positioned vertically" width="376" height="269" /></div>
-              <span className="hardware-board-detail">GPIO · USB · HDMI</span>
             </div>
             <figcaption><a href="https://commons.wikimedia.org/wiki/File:RaspberryPi_Model_4B.svg" target="_blank" rel="noreferrer">Board: Jstrom99 / Efa</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a><br />Background removed · rotated</figcaption>
           </figure>

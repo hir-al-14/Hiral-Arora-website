@@ -9,7 +9,7 @@ type WalkmanProps = {
 export default function Walkman({ track, label }: WalkmanProps) {
   return (
     <div className="tape-player" aria-hidden="true">
-    <div className="player-brand">HIRAL <span>stereo</span></div>
+    <div className="player-brand">HIRAL's EXPERIENCES <span>walkman</span></div>
     <div className="cassette">
     <div className="cassette-label">SIDE A · TRACK 0{track}</div>
     <div className="tape-reels"><i /><span /><i /></div>

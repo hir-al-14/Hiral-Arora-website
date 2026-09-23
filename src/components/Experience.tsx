@@ -68,7 +68,7 @@ export default function Experience() {
                 </button>
               ))}
             </div>
-            <p className="player-caption">I LOVE WALKMANS</p>
+            <p className="player-caption">I LOVE WALKMANS!!</p>
           </div>
           <div className="experience-panel" id="experience-panel" role="tabpanel" aria-labelledby={`experience-tab-${active}`} tabIndex={0}>
             <h3>{experience.role} <span>@ {experience.organization ?? experience.company}</span></h3>

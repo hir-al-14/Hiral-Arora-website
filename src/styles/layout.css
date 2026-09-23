@@ -1,0 +1,20 @@
+/* One desktop section rhythm; content remains free to grow on narrow screens. */
+@media (min-width: 1051px) {
+  .site > section {
+    min-height: var(--section-height);
+    display: grid;
+    align-items: center;
+    padding-block: 1.5rem;
+  }
+  .site > .intro-world { padding-block: 0; }
+  .gallery-content { padding-block: 0; }
+  .experience-heading { margin-bottom: 1.5rem; }
+  .experience-heading h2 { margin-top: 0; }
+  .research-inner { max-width: 1120px; }
+  .research h3 { font: 500 1.3rem/1.3 var(--font-main); }
+  .research-description { font-size: 0.875rem; line-height: 1.6; }
+  .organizations h2 { margin-bottom: 2rem; }
+}
+.hardware h2 { font-size: clamp(1.9rem, 2.8vw, 2.5rem); }
+.hardware-workbench { background-image: none; }
+.hardware-project { box-shadow: none; }

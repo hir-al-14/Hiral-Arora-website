@@ -9,7 +9,7 @@
   scroll-margin-top: 2rem;
 }
 .research-inner { width: min(100% - clamp(3rem, 10vw, 10rem), 1200px); margin-inline: auto; }
-.research h2 { font: 500 clamp(2rem, 3.3vw, 3rem)/1.15 var(--font-fun); margin: 0 0 1.5rem; }
+.research h2 { font: 500 clamp(1.9rem, 2.8vw, 2.5rem)/1.2 var(--font-main); margin: 0 0 1.5rem; }
 .research-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); }
 .research-item { min-width: 0; }
 .research-visual { display: block; background: #dfe7f1; aspect-ratio: 5 / 3; }
