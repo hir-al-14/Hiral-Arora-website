@@ -43,8 +43,6 @@ export const projects: Project[] = [
     description:
       "This website! Built from scratch with React and TypeScript and includes all the things I love: \nRain, photo memories, a Walkman, coffee,and probably too much time spent on tiny details :)",
     stack: ["React", "TypeScript", "Vite", "CSS"],
-    github:
-      "https://github.com/hir-al-14/Hiral-Arora-website",
   },
 
   {
@@ -53,8 +51,6 @@ export const projects: Project[] = [
     description:
       "A real-time movement coach that tracks body landmarks with MediaPipe and compares your pose against a reference movement.\nUses those differences to give live correction feedback.",
     stack: ["Python", "MediaPipe", "OpenCV", "FastAPI"],
-    github:
-      "https://github.com/hir-al-14/Computer-Vision-Projects",
   },
 
   {
