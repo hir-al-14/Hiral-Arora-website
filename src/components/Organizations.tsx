@@ -3,7 +3,7 @@ const organizations = [
   { name: "The AI Collective", description: "A UC Davis community exploring AI through hands-on projects, workshops, and research.", role: "Director of Workshops", logo: "aic.png", url: "https://www.aicdavis.org/", present: true, style: "aic" },
   { name: "GDSC", description: "A student developer community learning new technologies and building projects together.", role: "Technical Lead", detail: "Google Developer Student Club", logo: "gdsc.png", url: "https://developers.google.com/community/gdsc", present: false, style: "gdsc" },
   { name: "#include", description: "UC Davis developers and designers creating websites and digital tools for the community.", role: "Developer Member", logo: "include.svg", url: "https://includedavis.com/", present: false, style: "include" },
-  { name: "Void Club", description: "", role: "Core Engineering Team", detail: "High school", logo: "void.jpg", url: "https://www.instagram.com/thevoidclub/", present: false, style: "void", linkLabel: "View Instagram" },
+  { name: "Void Club", description: "", role: "Engineering Team", detail: "High school", logo: "void.jpg", url: "https://www.instagram.com/thevoidclub/", present: false, style: "void", linkLabel: "View Instagram" },
 ];
 
 export default function Organizations() {
