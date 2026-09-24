@@ -25,10 +25,6 @@ function Hero() {
           <span>“wait... i shd make that?”</span>
         </p>
 
-        <p className="hero-note">
-          currently running on curiosity & caffeine
-        </p>
-
         <div className="hero-links">
           <a
             href="https://github.com/hir-al-14"
