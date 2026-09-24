@@ -1,66 +1,51 @@
-<head>
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <!-- Main Google title -->
-  <title>Hiral Arora</title>
-
-  <!-- Main Google description -->
-  <meta
-    name="description"
-    content="CS + EE student at UC Davis. I build software, experiment with ML, and occasionally mess around with wires and sensors."
-  />
-
-  <!-- Tell search engines which domain is the main version -->
-  <link
-    rel="canonical"
-    href="https://hiralarora.com/"
-  />
-
-  <!-- Dumpling favicon -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="/logo/dumpling.png"
-  />
-
-  <!-- Social / link preview information -->
-  <meta
-    property="og:site_name"
-    content="Hiral Arora"
-  />
-
-  <meta
-    property="og:title"
-    content="Hiral Arora"
-  />
-
-  <meta
-    property="og:description"
-    content="CS + EE student at UC Davis. I build software, experiment with ML, and occasionally mess around with wires and sensors."
-  />
-
-  <meta
-    property="og:url"
-    content="https://hiralarora.com/"
-  />
-
-  <meta
-    property="og:type"
-    content="website"
-  />
-
-  <!-- Helps search engines understand the website -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Hiral Arora",
-      "url": "https://hiralarora.com/"
-    }
-  </script>
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiral Arora | Software Engineering Portfolio</title>
+    <meta name="description" content="Hiral Arora is a CS and EE student at UC Davis building software, machine learning, and hardware projects. Explore her projects, research, and experience." />
+    <link rel="canonical" href="https://hiralarora.com/" />
+    <link rel="icon" type="image/png" href="/logo/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo/favicon.png" />
+    <meta name="theme-color" content="#16283c" />
+    <meta property="og:site_name" content="Hiral Arora" />
+    <meta property="og:title" content="Hiral Arora | Software Engineering Portfolio" />
+    <meta property="og:description" content="CS and EE student at UC Davis building software, machine learning, and hardware projects. Explore my projects, research, and experience." />
+    <meta property="og:url" content="https://hiralarora.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://hiralarora.com/images/hiral-portrait.jpeg" />
+    <meta property="og:image:alt" content="Hiral Arora" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Hiral Arora | Software Engineering Portfolio" />
+    <meta name="twitter:description" content="CS and EE student at UC Davis. Software, machine learning, hardware, and research." />
+    <meta name="twitter:image" content="https://hiralarora.com/images/hiral-portrait.jpeg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://hiralarora.com/#website",
+            "name": "Hiral Arora",
+            "url": "https://hiralarora.com/",
+            "publisher": { "@id": "https://hiralarora.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://hiralarora.com/#person",
+            "name": "Hiral Arora",
+            "url": "https://hiralarora.com/",
+            "image": "https://hiralarora.com/images/hiral-portrait.jpeg",
+            "description": "CS and EE student at UC Davis building software, machine learning, and hardware projects.",
+            "sameAs": ["https://github.com/hir-al-14", "https://www.linkedin.com/in/hiral-aroraa/"]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
